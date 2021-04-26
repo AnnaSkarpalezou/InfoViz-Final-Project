@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import GenerateMap from "./components/Map.js";
 
 function App() {
+  // const [selectedBNB, setSelectedBNB] = React.useState(null);
+
+  const width = 500;
+  const height = 500;
+  const margin = { top: 0, right: 40, bottom: 160, left: 0, gap: 40 };
+  const innerWidth = width - margin.left - margin.right - margin.gap;
+  const innerHeight = height - margin.top - margin.bottom - margin.gap;
+
+  const dataPath = "./data/listings.csv";
+  const mapPath = "./data/neighbourhoods.geojson";
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <GenerateMap
+          x={margin.left}
+          y={margin.top}
+          WIDTH={innerWidth / 2}
+          HEIGHT={innerHeight + margin.gap}
+          data={dataPath}
+          path={mapPath}
+        />
+      </div>
     </div>
   );
 }
