@@ -42,7 +42,7 @@ function GenerateMap(props) {
   return (
     <svg width={WIDTH} height={HEIGHT}>
       <g transform={`translate(${x}, ${y})`}>
-        {mapData.features.map((feature, idx) => {
+        {/* {mapData.features.map((feature, idx) => {
           return (
             <path
               key={idx + "boundary"}
@@ -50,7 +50,7 @@ function GenerateMap(props) {
               d={mapPathing(feature)}
             />
           );
-        })}
+        })} */}
       </g>
     </svg>
   );
