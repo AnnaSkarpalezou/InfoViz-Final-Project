@@ -2,17 +2,13 @@ import React from "react";
 import * as d3 from "d3";
 
 function useMap(jsonPath) {
-  const [data, setData] = React.useState(null);
+  const [data, setData] = React.useState({ type: "", features: [] });
 
-  console.log(data);
   React.useEffect(() => {
     d3.json(jsonPath).then((geoJsonData) => {
-      console.log(geoJsonData);
       setData(geoJsonData);
     });
   }, []);
-  console.log("FFF");
-  console.log(data);
   return data;
 }
 
@@ -43,11 +39,16 @@ function GenerateMap(props) {
     <svg width={WIDTH} height={HEIGHT}>
       <g transform={`translate(${x}, ${y})`}>
         {mapData.features.map((feature, idx) => {
+          let color = "black";
+          if (idx == 0) {
+            color = "steelblue";
+          }
           return (
             <path
               key={idx + "boundary"}
               className={"boundary"}
               d={mapPathing(feature)}
+              fill={color}
             />
           );
         })}
