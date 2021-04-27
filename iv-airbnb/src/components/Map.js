@@ -38,11 +38,15 @@ function GenerateMap(props) {
   return (
     <svg width={WIDTH} height={HEIGHT}>
       <g transform={`translate(${x}, ${y})`}>
+<<<<<<< HEAD
         {mapData.features.map((feature, idx) => {
           let color = "black";
           if (idx == 0) {
             color = "steelblue";
           }
+=======
+        {/* {mapData.features.map((feature, idx) => {
+>>>>>>> 6ab93683506aee19a3891a1dc65f626e7d7a6231
           return (
             <path
               key={idx + "boundary"}
@@ -51,7 +55,7 @@ function GenerateMap(props) {
               fill={color}
             />
           );
-        })}
+        })} */}
       </g>
     </svg>
   );
