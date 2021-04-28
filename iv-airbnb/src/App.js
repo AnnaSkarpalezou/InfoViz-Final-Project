@@ -19,9 +19,9 @@ function useData(csvPath) {
 function App() {
   // const [selectedBNB, setSelectedBNB] = React.useState(null);
 
-  const width = 1000;
-  const height = 700;
-  const margin = { top: 0, right: 40, bottom: 160, left: 0, gap: 40 };
+  const width = 1800;
+  const height = 800;
+  const margin = { top: 70, right: 40, bottom: 160, left: 60, gap: 40 };
   const innerWidth = width - margin.left - margin.right - margin.gap;
   const innerHeight = height - margin.top - margin.bottom - margin.gap;
 

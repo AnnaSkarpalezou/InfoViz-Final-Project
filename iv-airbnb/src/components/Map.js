@@ -120,7 +120,7 @@ function GenerateMap(props) {
 
   return (
     <svg width={WIDTH} height={HEIGHT}>
-      <g transform={`translate(${x}, ${y})`}>
+      <g id="neighbourhoods" transform={`translate(${x}, ${y}) scale(.7)`}>
         {mapData.features.map((feature, idx) => {
           let color = "#57068c";
           let opacity = 1;
