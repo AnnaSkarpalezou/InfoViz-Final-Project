@@ -1,5 +1,6 @@
 import React from "react";
 import * as d3 from "d3";
+import { select } from "d3";
 
 function useMap(jsonPath) {
   const [data, setData] = React.useState({ type: "", features: [] });
@@ -19,9 +20,10 @@ function GenerateMap(props) {
     WIDTH,
     HEIGHT,
     data,
-    selectedBNB,
-    setSelectedBNB,
+    selectedNeighbourhood,
+    setSelectedNeighbourhood,
     path,
+    neighbourhoodNames,
   } = props;
 
   const mapData = useMap(path);
@@ -118,40 +120,61 @@ function GenerateMap(props) {
   //     .range([2, 20])
   //     .domain([d3.min(data, (d) => d.start), d3.max(data, (d) => d.start)]);
 
+  let neighbourhoods = mapData.features.map((feature, idx) => {
+    let color = "#57068c";
+    let opacity = 1;
+
+    if (neighbourhoodsCount[idx].length > 10000) {
+      color = "#57068c";
+    } else if (neighbourhoodsCount[idx].length > 3000) {
+      color = "#702b9d";
+    } else if (neighbourhoodsCount[idx].length > 2000) {
+      color = "#8950ae";
+    } else if (neighbourhoodsCount[idx].length > 1000) {
+      color = "#a376c0";
+    } else if (neighbourhoodsCount[idx].length > 600) {
+      color = "#bc9bd1";
+    } else if (neighbourhoodsCount[idx].length > 200) {
+      color = "#d5c1e2";
+    } else {
+      color = "#eee6f3";
+    }
+
+    if (selectedNeighbourhood != "NONE") {
+      opacity = 0.7;
+    }
+
+    if (neighbourhoodNames[idx] == selectedNeighbourhood) {
+      color = "#db167c";
+      opacity = 1;
+    }
+
+    return (
+      <path
+        key={idx + "boundary"}
+        className={"boundary"}
+        id={"neighbourhood" + idx}
+        d={mapPathing(feature)}
+        fill={color}
+        fillOpacity={opacity}
+        stroke={"#57068c"}
+        strokeWidth={"1px"}
+        neighbourhood={neighbourhoodNames[idx]}
+        onMouseEnter={() => {
+          setSelectedNeighbourhood(neighbourhoodNames[idx]);
+        }}
+        onMouseLeave={() => {
+          setSelectedNeighbourhood("NONE");
+        }}
+      />
+    );
+  });
+
   return (
     <svg width={WIDTH} height={HEIGHT}>
+      {selectedNeighbourhood}
       <g id="neighbourhoods" transform={`translate(${x}, ${y}) scale(.7)`}>
-        {mapData.features.map((feature, idx) => {
-          let color = "#57068c";
-          let opacity = 1;
-          if (neighbourhoodsCount[idx].length > 10000) {
-            opacity = 1;
-          } else if (neighbourhoodsCount[idx].length > 3000) {
-            opacity = 0.85;
-          } else if (neighbourhoodsCount[idx].length > 2000) {
-            opacity = 0.7;
-          } else if (neighbourhoodsCount[idx].length > 1000) {
-            opacity = 0.55;
-          } else if (neighbourhoodsCount[idx].length > 600) {
-            opacity = 0.4;
-          } else if (neighbourhoodsCount[idx].length > 200) {
-            opacity = 0.25;
-          } else {
-            opacity = 0.1;
-          }
-
-          return (
-            <path
-              key={idx + "boundary"}
-              className={"boundary"}
-              d={mapPathing(feature)}
-              fill={color}
-              fillOpacity={opacity}
-              stroke={"#57068c"}
-              strokeWidth={"1px"}
-            />
-          );
-        })}
+        {neighbourhoods}
       </g>
     </svg>
   );

@@ -36,10 +36,11 @@
     transform: rotate(360deg);
   }
 }
-
+/* 
 .boundary:hover {
-  transform: translate(-80px, -80px) scale(1.3);
-}
+  transform: translate(-110px, -110px) scale(1.4);
+  z-index: 10;
+} */
 
 .boundary {
   transition: 1s ease;
