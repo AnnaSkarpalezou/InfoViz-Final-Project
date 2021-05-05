@@ -147,6 +147,8 @@ function GenerateMap(props) {
               d={mapPathing(feature)}
               fill={color}
               fillOpacity={opacity}
+              stroke={"#57068c"}
+              strokeWidth={"1px"}
             />
           );
         })}

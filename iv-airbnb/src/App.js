@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import GenerateMap from "./components/Map.js";
+import TimeSeries from "./components/TimeSeries.js";
 import * as d3 from "d3";
 
 function useData(csvPath) {
@@ -42,6 +43,7 @@ function App() {
           path={mapPath}
         />
       </div>
+      <TimeSeries />
     </div>
   );
 }
