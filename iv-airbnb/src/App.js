@@ -22,7 +22,7 @@ function App() {
   const [selectedNeighbourhood, setSelectedNeighbourhood] = React.useState(" ");
 
   const width = 1500;
-  const height = 1000;
+  const height = 990;
   const margin = { top: 70, right: 40, bottom: 160, left: 60, gap: 40 };
   const innerWidth = width - margin.left - margin.right - margin.gap;
   const innerHeight = height - margin.top - margin.bottom - margin.gap;
@@ -142,7 +142,6 @@ function App() {
   return (
     <div className="App">
       <div id="choropleth">
-        {": " + selectedNeighbourhood}
         <GenerateMap
           x={margin.left}
           y={margin.top}
@@ -155,6 +154,7 @@ function App() {
           neighbourhoodNames={neighbourhoodNames}
           neighbourhoodsCount={neighbourhoodGrouping}
         />
+        <div id="selectNeighbourhood">{": " + selectedNeighbourhood}</div>
       </div>
 
       <div id="derivatives">

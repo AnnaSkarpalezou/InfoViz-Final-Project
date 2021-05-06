@@ -34,7 +34,7 @@ function GenerateMap(props) {
   const projection = d3.geoMercator().fitSize([WIDTH, HEIGHT], mapData);
   const mapPathing = d3.geoPath(projection);
 
-  const legendStart = [30, 30];
+  const legendStart = [30, 40];
   //   const radius = d3
   //     .scaleLinear()
   //     .range([2, 20])
@@ -98,6 +98,9 @@ function GenerateMap(props) {
       </g>
 
       <Legend x={legendStart[0]} y={legendStart[1]} />
+      <text x={30} y={28} id="vizTitle">
+        AIRBNBS IN SHANGHAI
+      </text>
     </svg>
   );
 }
