@@ -98,7 +98,7 @@ function GenerateMap(props) {
       </g>
 
       <Legend x={legendStart[0]} y={legendStart[1]} />
-      <text x={30} y={28} id="vizTitle">
+      <text x={30} y={40} id="vizTitle">
         AIRBNBS IN SHANGHAI
       </text>
     </svg>

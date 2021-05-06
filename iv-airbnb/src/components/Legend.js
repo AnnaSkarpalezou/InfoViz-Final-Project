@@ -5,7 +5,7 @@ function Legend(props) {
   const width = x;
   const height = 30;
   return (
-    <g id="Legend">
+    <g id="Legend" transform={`translate(0,35)`}>
       <rect x={x} y={y} width={width} height={height} fill={"#57068c"} />
       <text x={x + width + 10} y={y + height / 2 + 6} fill={"#57068c"}>
         {">"}10K
