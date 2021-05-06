@@ -20,8 +20,6 @@ function useData(csvPath) {
   return dataAll;
 }
 
-
-
 function App() {
   const [selectedNeighbourhood, setSelectedNeighbourhood] = React.useState(" ");
 
@@ -147,25 +145,27 @@ function App() {
     }
   });
 
-  const selected = TooltipData.filter(d => d.neighbourhood===selectedNeighbourhood)[0];
+  const selected = TooltipData.filter(
+    (d) => d.neighbourhood === selectedNeighbourhood
+  )[0];
 
   const mouseHoveringOn = (d) => {
     setSelectedNeighbourhood(d.neighbourhood);
     console.log("mouse over on");
   };
   const mouseHoveringOff = () => {
-    setSelectedNeighbourhood(null);
+    setSelectedNeighbourhood(" ");
     console.log("mouse over off");
   };
 
   const xScaleBar = d3
     .scaleBand()
-    .range([100, innerWidth -800])
+    .range([100, innerWidth - 800])
     .domain(PriceData.map((d) => d.neighbourhood));
 
   const yScaleBar = d3
     .scaleLinear()
-    .range([innerHeight/8 , 0])
+    .range([innerHeight / 8, 0])
     .domain([0, d3.max(PriceData, (d) => d.price)])
     .nice();
 
@@ -186,10 +186,16 @@ function App() {
         />
         <div id="selectNeighbourhood">{": " + selectedNeighbourhood}</div>
 
-        <Tooltip d={selectedNeighbourhood} data={TooltipData} left={innerWidth/2+margin.gap} top={margin.top+80+innerHeight/2} 
-                height={innerHeight/2} width={innerWidth/2}
-                xScale={xScaleBar} yScale={yScaleBar} 
-                />
+        <Tooltip
+          d={selectedNeighbourhood}
+          data={TooltipData}
+          left={innerWidth / 2 + margin.gap}
+          top={margin.top + 80 + innerHeight / 2}
+          height={innerHeight / 2}
+          width={innerWidth / 2}
+          xScale={xScaleBar}
+          yScale={yScaleBar}
+        />
       </div>
 
       <div id="derivatives">
@@ -200,7 +206,6 @@ function App() {
               uiPolyWidth + "," + 0,
               0 + "," + uiPolyHeight,
             ]}
-            fill="red"
           />
           <Polygon
             points={[
@@ -208,26 +213,25 @@ function App() {
               uiPolyWidth + "," + window.innerHeight,
               0 + "," + window.innerHeight,
             ]}
-            fill="red"
           />
         </svg>
         <TimeSeries />
         <svg>
-        <BarChart
-          x={margin.left}
-          y={margin.top}
-          width={innerWidth / 2}
-          height={innerHeight + margin.gap+200}
-          data={PriceData}
-          setSelectedNeighbourhood={setSelectedNeighbourhood}
-          selectedNeighbourhood={selectedNeighbourhood}
-          neighbourhoodNames={neighbourhoodNames}
-          neighbourhoodsCount={neighbourhoodGrouping}
-          mouseHoveringOn={mouseHoveringOn}
-          mouseHoveringOff={mouseHoveringOff}
-          xScale={xScaleBar}
-          yScale={yScaleBar}
-        />
+          <BarChart
+            x={margin.left}
+            y={margin.top}
+            width={innerWidth / 2}
+            height={innerHeight + margin.gap + 200}
+            data={PriceData}
+            setSelectedNeighbourhood={setSelectedNeighbourhood}
+            selectedNeighbourhood={selectedNeighbourhood}
+            neighbourhoodNames={neighbourhoodNames}
+            neighbourhoodsCount={neighbourhoodGrouping}
+            mouseHoveringOn={mouseHoveringOn}
+            mouseHoveringOff={mouseHoveringOff}
+            xScale={xScaleBar}
+            yScale={yScaleBar}
+          />
         </svg>
       </div>
     </div>
