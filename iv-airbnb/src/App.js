@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import GenerateMap from "./components/Map.js";
 import TimeSeries from "./components/TimeSeries.js";
+import BarChart from "./components/BarChart.js";
 import * as d3 from "d3";
 
 function useData(csvPath) {
@@ -156,6 +157,18 @@ function App() {
         />
       </div>
       <TimeSeries />
+      <BarChart 
+          x={margin.left}
+          y={margin.top}
+          WIDTH={innerWidth / 2}
+          HEIGHT={innerHeight + margin.gap}
+          data={dataAll}
+          path={dataPath}
+          setSelectedNeighbourhood={setSelectedNeighbourhood}
+          selectedNeighbourhood={selectedNeighbourhood}
+          neighbourhoodNames={neighbourhoodNames}
+          neighbourhoodsCount={neighbourhoodGrouping}
+      />
     </div>
   );
 }
