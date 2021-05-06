@@ -1,6 +1,8 @@
 import React from "react";
 import * as d3 from "d3";
+import legend from "./Legend.js";
 import { select } from "d3";
+import Legend from "./Legend.js";
 
 function useMap(jsonPath) {
   const [data, setData] = React.useState({ type: "", features: [] });
@@ -31,6 +33,8 @@ function GenerateMap(props) {
 
   const projection = d3.geoMercator().fitSize([WIDTH, HEIGHT], mapData);
   const mapPathing = d3.geoPath(projection);
+
+  const legendStart = [30, 30];
   //   const radius = d3
   //     .scaleLinear()
   //     .range([2, 20])
@@ -92,6 +96,8 @@ function GenerateMap(props) {
       <g id="neighbourhoods" transform={`translate(${x}, ${y}) scale(.7)`}>
         {neighbourhoods}
       </g>
+
+      <Legend x={legendStart[0]} y={legendStart[1]} />
     </svg>
   );
 }

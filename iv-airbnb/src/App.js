@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import GenerateMap from "./components/Map.js";
+
 import TimeSeries from "./components/TimeSeries.js";
 import * as d3 from "d3";
 
@@ -140,8 +141,8 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        {/* {"Selected Neighbourhood: " + selectedNeighbourhood} */}
+      <div id="choropleth">
+        {"Selected Neighbourhood: " + selectedNeighbourhood}
         <GenerateMap
           x={margin.left}
           y={margin.top}
