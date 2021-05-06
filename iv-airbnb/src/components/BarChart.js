@@ -20,19 +20,13 @@ function BarChart(props) {
   //const colorD = d => d.neighbourhood === selectedNeighbourhood? "steelblue":"#fc8d59";
 
   const ticksx = xScale.domain();
-  const ticksy = yScale.ticks(15);
+  const ticksy = yScale.ticks(5);
 
   if (selectedNeighbourhood === null) {
       return <g transform={`translate(${x}, ${y})`} >
           <text style={{ textAnchor:'start', fontSize:'15px'}} transform={`translate(${width/3}, 0)`}>
-                      {"Num. of ridders start from a station"}
+                      {"Average Prices of Listings per neighbourhood"}
           </text>
-          <g transform={`translate(${0}, ${height/2})`}>    
-              <text style={{ textAnchor:'start', fontSize:'15px'}} transform={`translate(${width/3}, ${height/2+10})`}>
-                  {"Num. of ridders end into a station"}
-              </text>
-          </g>
-
           <line x1={0} y1={(height/2)} x2={width-400} y2={(height/2)} stroke={`black`} />
                   {ticksx.map( tickValue => {
                       return <g key={tickValue} transform={`translate(${xScale(tickValue)}, ${(height/2)})`}>
