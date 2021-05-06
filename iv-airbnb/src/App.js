@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import GenerateMap from "./components/Map.js";
-
+import Polygon from "./components/Polygon.js";
 import TimeSeries from "./components/TimeSeries.js";
 import * as d3 from "d3";
 
@@ -19,16 +19,16 @@ function useData(csvPath) {
 }
 
 function App() {
-  const [selectedNeighbourhood, setSelectedNeighbourhood] = React.useState(
-    null
-  );
+  const [selectedNeighbourhood, setSelectedNeighbourhood] = React.useState(" ");
 
-  const width = 1800;
-  const height = 800;
+  const width = 1500;
+  const height = 1000;
   const margin = { top: 70, right: 40, bottom: 160, left: 60, gap: 40 };
   const innerWidth = width - margin.left - margin.right - margin.gap;
   const innerHeight = height - margin.top - margin.bottom - margin.gap;
 
+  const uiPolyHeight = window.innerHeight / 2;
+  const uiPolyWidth = 150;
   const dataPath = "./data/listings.csv";
   const mapPath = "./data/neighbourhoods.geojson";
 
@@ -142,7 +142,7 @@ function App() {
   return (
     <div className="App">
       <div id="choropleth">
-        {"Selected Neighbourhood: " + selectedNeighbourhood}
+        {": " + selectedNeighbourhood}
         <GenerateMap
           x={margin.left}
           y={margin.top}
@@ -156,7 +156,28 @@ function App() {
           neighbourhoodsCount={neighbourhoodGrouping}
         />
       </div>
-      <TimeSeries />
+
+      <div id="derivatives">
+        <svg width={uiPolyWidth} height={window.innerHeight} id="polygons">
+          <Polygon
+            points={[
+              0 + "," + 0,
+              uiPolyWidth + "," + 0,
+              0 + "," + uiPolyHeight,
+            ]}
+            fill="red"
+          />
+          <Polygon
+            points={[
+              0 + "," + uiPolyHeight,
+              uiPolyWidth + "," + window.innerHeight,
+              0 + "," + window.innerHeight,
+            ]}
+            fill="red"
+          />
+        </svg>
+        <TimeSeries />
+      </div>
     </div>
   );
 }

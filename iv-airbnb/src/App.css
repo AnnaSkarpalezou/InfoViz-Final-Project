@@ -1,5 +1,8 @@
 .App {
+  display: flex;
+  flex-direction: row;
   text-align: center;
+  background-color: floralwhite;
 }
 
 .App-logo {
@@ -44,4 +47,34 @@
 
 .boundary {
   transition: 1s ease;
+}
+
+#choropleth {
+  display: flex;
+  flex-direction: column;
+  color: #57068c;
+}
+#derivatives {
+  display: flex;
+  flex-direction: column;
+  background-color: #57068c;
+  width: 100%;
+}
+
+#polygons {
+  position: absolute;
+  fill: floralwhite;
+}
+
+#polygons:hover {
+  animation: removePoly ease-out 0.5s forwards;
+}
+
+@keyframes removePoly {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(-70px);
+  }
 }

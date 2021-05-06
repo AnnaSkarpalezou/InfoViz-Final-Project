@@ -60,7 +60,7 @@ function GenerateMap(props) {
       color = "#eee6f3";
     }
 
-    if (selectedNeighbourhood != "NONE") {
+    if (selectedNeighbourhood != " ") {
       opacity = 0.7;
     }
 
@@ -84,7 +84,7 @@ function GenerateMap(props) {
           setSelectedNeighbourhood(neighbourhoodNames[idx]);
         }}
         onMouseLeave={() => {
-          setSelectedNeighbourhood("NONE");
+          setSelectedNeighbourhood(" ");
         }}
       />
     );
@@ -93,7 +93,7 @@ function GenerateMap(props) {
   return (
     <svg width={WIDTH} height={HEIGHT}>
       {selectedNeighbourhood}
-      <g id="neighbourhoods" transform={`translate(${x}, ${y}) scale(.7)`}>
+      <g id="neighbourhoods" transform={`translate(${x}, ${y}) scale(.8)`}>
         {neighbourhoods}
       </g>
 
