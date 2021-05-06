@@ -67,8 +67,8 @@ function BarChart(props) {
           );
         })}
         {data.map((d) => {
-          console.log(d.neighbourhood);
-          console.log(d.price);
+          //   console.log(d.neighbourhood);
+          //   console.log(d.price);
           return (
             <rect
               key={d.neighbourhood + "Bar"}

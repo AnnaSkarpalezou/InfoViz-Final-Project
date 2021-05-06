@@ -31,6 +31,8 @@ function App() {
 
   const uiPolyHeight = window.innerHeight / 2;
   const uiPolyWidth = 150;
+  const polyRef = React.useRef(null);
+
   const dataPath = "./data/listings.csv";
   const mapPath = "./data/neighbourhoods.geojson";
   const PricePath = "./data/av_prices.csv";
@@ -169,6 +171,22 @@ function App() {
     .domain([0, d3.max(PriceData, (d) => d.price)])
     .nice();
 
+  if (polyRef.current != null) {
+    console.log("AAAAD");
+    console.log(polyRef.current.style.animation);
+    if (selectedNeighbourhood != " " && polyRef.current.style.animation == "") {
+      console.log("AAAAAA");
+      polyRef.current.style.animation = "removePoly ease-out 0.5s forwards";
+      console.log(polyRef);
+      console.log(polyRef.current.style.animation);
+    } else if (
+      selectedNeighbourhood == " " &&
+      polyRef.current.style.animation != ""
+    ) {
+      polyRef.current.style.animation = "";
+    }
+  }
+
   return (
     <div className="App">
       <div id="choropleth">
@@ -199,22 +217,6 @@ function App() {
       </div>
 
       <div id="derivatives">
-        <svg width={uiPolyWidth} height={window.innerHeight} id="polygons">
-          <Polygon
-            points={[
-              0 + "," + 0,
-              uiPolyWidth + "," + 0,
-              0 + "," + uiPolyHeight,
-            ]}
-          />
-          <Polygon
-            points={[
-              0 + "," + uiPolyHeight,
-              uiPolyWidth + "," + window.innerHeight,
-              0 + "," + window.innerHeight,
-            ]}
-          />
-        </svg>
         <TimeSeries />
         <svg>
           <BarChart
@@ -231,6 +233,27 @@ function App() {
             mouseHoveringOff={mouseHoveringOff}
             xScale={xScaleBar}
             yScale={yScaleBar}
+          />
+        </svg>
+        <svg
+          width={uiPolyWidth}
+          height={window.innerHeight}
+          id="polygons"
+          ref={polyRef}
+        >
+          <Polygon
+            points={[
+              0 + "," + 0,
+              uiPolyWidth + "," + 0,
+              0 + "," + uiPolyHeight,
+            ]}
+          />
+          <Polygon
+            points={[
+              0 + "," + uiPolyHeight,
+              uiPolyWidth + "," + window.innerHeight,
+              0 + "," + window.innerHeight,
+            ]}
           />
         </svg>
       </div>
