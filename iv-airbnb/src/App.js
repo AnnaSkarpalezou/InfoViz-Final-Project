@@ -153,12 +153,12 @@ function App() {
 
   const xScaleBar = d3
     .scaleBand()
-    .range([0, innerWidth - 500])
+    .range([100, innerWidth -800])
     .domain(PriceData.map((d) => d.neighbourhood));
 
   const yScaleBar = d3
     .scaleLinear()
-    .range([innerHeight / 4, 0])
+    .range([innerHeight/8 , 0])
     .domain([0, d3.max(PriceData, (d) => d.price)])
     .nice();
 
@@ -200,11 +200,12 @@ function App() {
           />
         </svg>
         <TimeSeries />
+        <svg>
         <BarChart
           x={margin.left}
           y={margin.top}
           width={innerWidth / 2}
-          height={innerHeight + margin.gap}
+          height={innerHeight + margin.gap+200}
           data={PriceData}
           setSelectedNeighbourhood={setSelectedNeighbourhood}
           selectedNeighbourhood={selectedNeighbourhood}
@@ -215,6 +216,7 @@ function App() {
           xScale={xScaleBar}
           yScale={yScaleBar}
         />
+        </svg>
       </div>
     </div>
   );
