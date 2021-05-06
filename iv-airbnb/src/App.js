@@ -18,6 +18,8 @@ function useData(csvPath) {
   return dataAll;
 }
 
+
+
 function App() {
   const [selectedNeighbourhood, setSelectedNeighbourhood] = React.useState(
     null
@@ -31,8 +33,10 @@ function App() {
 
   const dataPath = "./data/listings.csv";
   const mapPath = "./data/neighbourhoods.geojson";
+  const PricePath = "./data/av_prices.csv";
 
   const dataAll = useData(dataPath);
+  const PriceData = useData(PricePath);
 
   const neighbourhoodNames = [
     "青浦区 / Qingpu District",
@@ -139,6 +143,27 @@ function App() {
     }
   });
 
+const mouseHoveringOn = d => {
+    setSelectedNeighbourhood(d.neighbourhood);
+    console.log("mouse over on");
+    }
+const mouseHoveringOff = () => {
+    setSelectedNeighbourhood(null);
+    console.log("mouse over off");
+    }
+
+
+const xScaleBar =  d3.scaleBand()
+.range([0, innerWidth-500])
+.domain(PriceData.map((d)=> d.neighbourhood));
+
+const yScaleBar = d3.scaleLinear()
+.range([innerHeight/4,0])
+.domain([0, d3.max(PriceData, d => d.price)])
+.nice();
+
+
+
   return (
     <div className="App">
       <div>
@@ -160,14 +185,17 @@ function App() {
       <BarChart 
           x={margin.left}
           y={margin.top}
-          WIDTH={innerWidth / 2}
-          HEIGHT={innerHeight + margin.gap}
-          data={dataAll}
-          path={dataPath}
+          width={innerWidth / 2}
+          height={innerHeight + margin.gap}
+          data={PriceData}
           setSelectedNeighbourhood={setSelectedNeighbourhood}
           selectedNeighbourhood={selectedNeighbourhood}
           neighbourhoodNames={neighbourhoodNames}
           neighbourhoodsCount={neighbourhoodGrouping}
+          mouseHoveringOn = {mouseHoveringOn} 
+          mouseHoveringOff = {mouseHoveringOff}
+          xScale={xScaleBar} 
+          yScale={yScaleBar} 
       />
     </div>
   );
