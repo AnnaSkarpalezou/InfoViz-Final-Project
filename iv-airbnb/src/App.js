@@ -4,6 +4,7 @@ import GenerateMap from "./components/Map.js";
 import Polygon from "./components/Polygon.js";
 import TimeSeries from "./components/TimeSeries.js";
 import BarChart from "./components/BarChart.js";
+import Tooltip from "./components/Tooltip.js";
 import * as d3 from "d3";
 
 function useData(csvPath) {
@@ -19,6 +20,8 @@ function useData(csvPath) {
   return dataAll;
 }
 
+
+
 function App() {
   const [selectedNeighbourhood, setSelectedNeighbourhood] = React.useState(" ");
 
@@ -33,9 +36,11 @@ function App() {
   const dataPath = "./data/listings.csv";
   const mapPath = "./data/neighbourhoods.geojson";
   const PricePath = "./data/av_prices.csv";
+  const TooltipPath = "./data/tooltip_stats.csv";
 
   const dataAll = useData(dataPath);
   const PriceData = useData(PricePath);
+  const TooltipData = useData(TooltipPath);
 
   const neighbourhoodNames = [
     "青浦区 / Qingpu District",
@@ -142,6 +147,8 @@ function App() {
     }
   });
 
+  const selected = TooltipData.filter(d => d.neighbourhood===selectedNeighbourhood)[0];
+
   const mouseHoveringOn = (d) => {
     setSelectedNeighbourhood(d.neighbourhood);
     console.log("mouse over on");
@@ -178,6 +185,11 @@ function App() {
           neighbourhoodsCount={neighbourhoodGrouping}
         />
         <div id="selectNeighbourhood">{": " + selectedNeighbourhood}</div>
+
+        <Tooltip d={selectedNeighbourhood} data={TooltipData} left={innerWidth/2+margin.gap} top={margin.top+80+innerHeight/2} 
+                height={innerHeight/2} width={innerWidth/2}
+                xScale={xScaleBar} yScale={yScaleBar} 
+                />
       </div>
 
       <div id="derivatives">
