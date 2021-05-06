@@ -172,13 +172,8 @@ function App() {
     .nice();
 
   if (polyRef.current != null) {
-    console.log("AAAAD");
-    console.log(polyRef.current.style.animation);
     if (selectedNeighbourhood != " " && polyRef.current.style.animation == "") {
-      console.log("AAAAAA");
       polyRef.current.style.animation = "removePoly ease-out 0.5s forwards";
-      console.log(polyRef);
-      console.log(polyRef.current.style.animation);
     } else if (
       selectedNeighbourhood == " " &&
       polyRef.current.style.animation != ""
@@ -207,7 +202,7 @@ function App() {
         <Tooltip
           d={selectedNeighbourhood}
           data={TooltipData}
-          left={innerWidth / 2 + margin.gap}
+          left={margin.gap}
           top={margin.top + 80 + innerHeight / 2}
           height={innerHeight / 2}
           width={innerWidth / 2}
