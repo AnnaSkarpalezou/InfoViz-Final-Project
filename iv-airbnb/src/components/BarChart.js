@@ -20,7 +20,7 @@ function BarChart(props) {
   } = props;
 
   const color = (d) =>
-    d.neighbourhood === selectedNeighbourhood ? "red" : "#99d594";
+    d.neighbourhood === selectedNeighbourhood ? "#e60969" : "#99d594";
   //const colorD = d => d.neighbourhood === selectedNeighbourhood? "steelblue":"#fc8d59";
 
   const ticksx = xScale.domain();

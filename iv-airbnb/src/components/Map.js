@@ -65,7 +65,7 @@ function GenerateMap(props) {
     }
 
     if (neighbourhoodNames[idx] == selectedNeighbourhood) {
-      color = "#db167c";
+      color = "#e60969";
       opacity = 1;
     }
 
