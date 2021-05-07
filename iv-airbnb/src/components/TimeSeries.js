@@ -26,9 +26,9 @@ function TimeSeries(props) {
     .curve(d3.curveBasis)
     (data);
 
-    return <g transform={`translate(${x}, ${y + 400})`} >
+    return <g transform={`translate(${x}, ${y})`} >
       <path d={p1} fill={'lightgreen'} stroke={'black'} />
-      <text transform={`translate(${0}, ${0})rotate(0)`}>
+      <text x={0} y={0} transform={`translate(${0}, ${0})rotate(0)`}>
                     {"Total"}
             </text>
   </g>

@@ -230,24 +230,7 @@ function App() {
       </div>
 
       <div id="derivatives">
-        <svg>
-          <TimeSeries
-            data={monthData}
-            x={margin.left}
-            y={margin.top}
-            width={innerWidth / 2}
-            height={innerHeight / 2}
-            xScale={xScaleArea}
-            yScale={yScaleArea}
-            neighbourhoodNames={neighbourhoodNames}
-            setSelectedNeighbourhood={setSelectedNeighbourhood}
-            selectedNeighbourhood={selectedNeighbourhood}
-            mouseHoveringOn={mouseHoveringOn}
-            mouseHoveringOff={mouseHoveringOff}
-          />
-        </svg>
-
-        <svg>
+        <svg height={window.innerHeight/2}>
           <BarChart
             x={margin.left}
             y={margin.top}
@@ -262,6 +245,22 @@ function App() {
             mouseHoveringOff={mouseHoveringOff}
             xScale={xScaleBar}
             yScale={yScaleBar}
+          />
+        </svg>
+        <svg height={window.innerHeight/2}>
+          <TimeSeries
+            data={monthData}
+            x={100}
+            y={innerHeight/2}
+            width={innerWidth / 2}
+            height={innerHeight / 2}
+            xScale={xScaleArea}
+            yScale={yScaleArea}
+            neighbourhoodNames={neighbourhoodNames}
+            setSelectedNeighbourhood={setSelectedNeighbourhood}
+            selectedNeighbourhood={selectedNeighbourhood}
+            mouseHoveringOn={mouseHoveringOn}
+            mouseHoveringOff={mouseHoveringOff}
           />
         </svg>
         <svg
