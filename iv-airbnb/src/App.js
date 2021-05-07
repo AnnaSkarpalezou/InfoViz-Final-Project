@@ -212,7 +212,16 @@ function App() {
       </div>
 
       <div id="derivatives">
-        <TimeSeries />
+        <svg>
+          <TimeSeries
+            x={margin.left}
+            y={margin.bottom}
+            width={innerWidth / 2}
+            height={innerHeight / 2}
+
+          />
+        </svg>
+        
         <svg>
           <BarChart
             x={margin.left}
