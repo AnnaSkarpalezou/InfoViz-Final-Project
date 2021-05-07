@@ -185,7 +185,6 @@ function App() {
     .nice();
 
 
-
   if (polyRef.current != null) {
     if (
       selectedNeighbourhood != " " &&

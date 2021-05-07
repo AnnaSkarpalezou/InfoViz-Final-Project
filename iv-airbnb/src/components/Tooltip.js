@@ -19,18 +19,20 @@ function Tooltip(props) {
              if (d === data[i].neighbourhood){
                 const divStyle = {
                     position: "absolute",
-                    textAlign: "left",
-                    width: "280px",
+                    textAlign: "center",
+                    width: "300px",
                     height: "160px",
                     padding: "2px",
                     font: "12px sans-serif",
-                    background: "lightgreen",
-                    border: "0px",
+                    background: "floralwhite",
+                    border: "2px",
                     borderRadius: "8px",
                     pointerEvents: "none",
                     left: `${left+580}px`,
-                    top: `${top+100}px`
+                    top: `${top-500}px`
                 };
+
+
                 return <div style={divStyle} >
                     <p>{}</p>
                 <p>Aggregate statistics for the {data[i].neighbourhood}</p>
