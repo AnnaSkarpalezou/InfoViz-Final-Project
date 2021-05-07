@@ -28,7 +28,7 @@ function TimeSeries(props) {
 
     return <g transform={`translate(${x}, ${y})`} >
       <path d={p1} fill={'lightgreen'} stroke={'black'} />
-      <text x={0} y={0} transform={`translate(${0}, ${0})rotate(0)`}>
+      <text transform={`translate(${0}, ${0})rotate(0)`}>
                     {"Total"}
             </text>
   </g>

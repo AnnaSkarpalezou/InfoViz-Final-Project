@@ -250,10 +250,10 @@ function App() {
         <svg height={window.innerHeight/2}>
           <TimeSeries
             data={monthData}
-            x={100}
-            y={innerHeight/2}
-            width={innerWidth / 2}
-            height={innerHeight / 2}
+            x={50}
+            y={50}
+            width={innerWidth/2}
+            height={innerHeight/2}
             xScale={xScaleArea}
             yScale={yScaleArea}
             neighbourhoodNames={neighbourhoodNames}
