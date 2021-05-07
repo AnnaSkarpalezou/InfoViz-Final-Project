@@ -176,13 +176,16 @@ function App() {
     .nice();
 
   if (polyRef.current != null) {
-    if (selectedNeighbourhood != " " && polyRef.current.style.animation == "") {
+    if (
+      selectedNeighbourhood != " " &&
+      polyRef.current.style.animationName != "removePoly"
+    ) {
       polyRef.current.style.animation = "removePoly ease-out 0.5s forwards";
     } else if (
       selectedNeighbourhood == " " &&
-      polyRef.current.style.animation != ""
+      polyRef.current.style.animationName != "removePolyrev"
     ) {
-      polyRef.current.style.animation = "";
+      polyRef.current.style.animation = "removePolyrev ease-out 0.5s forwards";
     }
   }
 
