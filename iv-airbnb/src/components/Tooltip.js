@@ -10,8 +10,8 @@ function Tooltip(props) {
     if (d === null)  {
         return <g></g>;
     } else {
-        console.log(d);
-        console.log(data);
+        // console.log(d);
+        // console.log(data);
 
         if (data.length > 0){
 
