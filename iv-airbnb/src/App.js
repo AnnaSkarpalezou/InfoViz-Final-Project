@@ -45,7 +45,7 @@ function App() {
   const monthData = useData(monthPath);
   // console.log("FFFFF");
   // console.log(TooltipData);
-  console.log(monthData)
+  
   const neighbourhoodNames = [
     "青浦区 / Qingpu District",
     "黄浦区 / Huangpu District",
@@ -183,8 +183,6 @@ function App() {
     .range([innerHeight/4,20])
     .domain([0, d3.max(monthData, d => d.total)])
     .nice();
-
-  console.log(monthData)
 
   if (polyRef.current != null) {
     if (

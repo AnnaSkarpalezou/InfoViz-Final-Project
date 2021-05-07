@@ -3,7 +3,6 @@ import * as d3 from "d3";
 
 function TimeSeries(props) {
   const {
-    d,
     data,
     x,
     y,
@@ -26,7 +25,8 @@ function TimeSeries(props) {
     .y1(d => yScale(d.total))
     .curve(d3.curveBasis)
     (data);
-
+  
+  console.log(data[0].date)
   
 
     return <g transform={`translate(${x}, ${y})`} >
