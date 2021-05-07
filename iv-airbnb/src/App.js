@@ -155,6 +155,10 @@ function App() {
     (d) => d.neighbourhood === selectedNeighbourhood
   )[0];
 
+  const districtData = monthData.filter(d=>{
+    return d.neighbourhood == selectedNeighbourhood;
+  });
+
   const mouseHoveringOn = (d) => {
     setSelectedNeighbourhood(d.neighbourhood);
     console.log("mouse over on");
@@ -197,7 +201,6 @@ function App() {
       polyRef.current.style.animation = "removePolyrev ease-out 0.5s forwards";
     }
   }
-  
   return (
     <div className="App">
       <div id="choropleth">
@@ -247,7 +250,7 @@ function App() {
         </svg>
         <svg height={window.innerHeight/2}>
           <TimeSeries
-            data={monthData}
+            data={districtData}
             x={50}
             y={50}
             width={innerWidth/2}
