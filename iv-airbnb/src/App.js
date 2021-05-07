@@ -11,7 +11,7 @@ function useData(csvPath) {
   const [dataAll, setData] = React.useState([]);
   React.useEffect(() => {
     d3.csv(csvPath).then((data) => {
-      data.forEach((d) => {});
+      // data.forEach((d) => {});
       setData(data);
     });
   }, []);
@@ -37,10 +37,14 @@ function App() {
   const mapPath = "./data/neighbourhoods.geojson";
   const PricePath = "./data/av_prices.csv";
   const TooltipPath = "./data/tooltip_stats.csv";
+  const monthPath = "./data/neighbourhood_months.csv";
 
   const dataAll = useData(dataPath);
   const PriceData = useData(PricePath);
   const TooltipData = useData(TooltipPath);
+  const monthData = useData(monthPath);
+  console.log("FFFFF");
+  console.log(TooltipData);
 
   const neighbourhoodNames = [
     "青浦区 / Qingpu District",
@@ -218,10 +222,9 @@ function App() {
             y={margin.bottom}
             width={innerWidth / 2}
             height={innerHeight / 2}
-
           />
         </svg>
-        
+
         <svg>
           <BarChart
             x={margin.left}
