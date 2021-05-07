@@ -175,6 +175,17 @@ function App() {
     .domain([0, d3.max(PriceData, (d) => d.price)])
     .nice();
 
+  const xScaleArea =  d3.scaleBand()
+    .range([0, (innerWidth-420)])
+    .domain(monthData.map((d)=> d.date));
+
+  const yScaleArea = d3.scaleLinear()
+    .range([innerHeight/4,20])
+    .domain([0, d3.max(monthData, d => d.total)])
+    .nice();
+
+
+
   if (polyRef.current != null) {
     if (
       selectedNeighbourhood != " " &&
@@ -221,10 +232,18 @@ function App() {
       <div id="derivatives">
         <svg>
           <TimeSeries
+            data={monthData}
             x={margin.left}
             y={margin.bottom}
             width={innerWidth / 2}
             height={innerHeight / 2}
+            xScale={xScaleArea}
+            yScale={yScaleArea}
+            neighbourhoodNames={neighbourhoodNames}
+            setSelectedNeighbourhood={setSelectedNeighbourhood}
+            selectedNeighbourhood={selectedNeighbourhood}
+            mouseHoveringOn={mouseHoveringOn}
+            mouseHoveringOff={mouseHoveringOff}
           />
         </svg>
 
