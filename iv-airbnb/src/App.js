@@ -233,8 +233,8 @@ function App() {
         <svg>
           <TimeSeries
             data={monthData}
-            x={innerWidth / 2 + margin.gap}
-            y={margin.top + 80 + innerHeight/2}
+            x={margin.left}
+            y={margin.top}
             width={innerWidth / 2}
             height={innerHeight / 2}
             xScale={xScaleArea}
