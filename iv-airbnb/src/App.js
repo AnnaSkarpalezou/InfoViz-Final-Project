@@ -212,7 +212,7 @@ function App() {
           left={margin.gap}
           top={margin.top + 80 + innerHeight / 2}
           height={innerHeight / 2}
-          width={innerWidth / 2}
+          width={(innerWidth / 2)+500}
           xScale={xScaleBar}
           yScale={yScaleBar}
         />

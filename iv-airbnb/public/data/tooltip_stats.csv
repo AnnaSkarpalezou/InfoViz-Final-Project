@@ -1,4 +1,4 @@
-neighbourhood,Average,maximum price,minimum price,n of Entire home/apts,n of Private rooms,n of Shared rooms,Mean n of reviews per month
+neighbourhood,Average,maximum,minimum,Entire,Private,Shared,reviews
 嘉定区 / Jiading District,513.509900990099,67033,0,507,282,19,0.5601526717557253
 奉贤区 / Fengxian District,822.6498194945848,11000,40,200,72,5,0.4652447552447552
 宝山区 / Baoshan District,418.7675507020281,11372,16,336,285,20,0.5924050632911391

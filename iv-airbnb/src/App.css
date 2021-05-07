@@ -75,13 +75,13 @@
     transform: translateX(0px);
   }
   to {
-    transform: translateX(-130px);
+    transform: translateX(-150px);
   }
 }
 
 @keyframes removePolyrev {
   from {
-    transform: translateX(-130px);
+    transform: translateX(-150px);
   }
   to {
     transform: translateX(0px);

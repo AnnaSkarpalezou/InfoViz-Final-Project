@@ -4,50 +4,53 @@ import GenerateMap from "./Map";
 import TimeSeries from "./TimeSeries";
 import { range, select } from "d3";
 
-
-
 function Tooltip(props) {
     const {d, data, left, top, height, width} = props;
         //console.log(d);
     if (d === null)  {
         return <g></g>;
     } else {
-        console.log(d)
-        // console.log(data)
+        console.log(d);
+        console.log(data);
 
-        // for (let i = 0; i < 16; i++) {
-        //     if (d === data[i]['neighbourhood']){
+        if (data.length > 0){
 
-
-            const divStyle = {
-                position: "absolute",
-                textAlign: "left",
-                width: "150px",
-                height: "120px",
-                padding: "2px",
-                font: "12px sans-serif",
-                background: "lightgreen",
-                border: "0px",
-                borderRadius: "8px",
-                pointerEvents: "none",
-                left: `${left+10}px`,
-                top: `${top}px`
-            };
-            return <div style={divStyle} >
-                <p>{}</p>
-                <p>Trip durations:</p>
+        for (let i = 0; i < 16; i++) {
+             if (d === data[i].neighbourhood){
+                const divStyle = {
+                    position: "absolute",
+                    textAlign: "left",
+                    width: "280px",
+                    height: "160px",
+                    padding: "2px",
+                    font: "12px sans-serif",
+                    background: "lightgreen",
+                    border: "0px",
+                    borderRadius: "8px",
+                    pointerEvents: "none",
+                    left: `${left+580}px`,
+                    top: `${top+100}px`
+                };
+                return <div style={divStyle} >
+                    <p>{}</p>
+                <p>Aggregate statistics for the {data[i].neighbourhood}</p>
                 <ul> 
                 {/* <li>End in: {}</li> */}
-                <li>Start from: {}</li>
+                <li>Average listing price: {data[i].Average}</li>
+                <li>Maximum price: {data[i].maximum}</li>
+                <li>Minimum price: {data[i].minimum}</li>
+                <li>Number of entire homes/aptm: {data[i].Entire}</li>
+                <li>Number of private rooms: {data[i].Private}</li>
+                <li>Number of shared rooms: {data[i].Shared}</li>
+                <li>Average number of reviews/month: {data[i].reviews}</li>
                 </ul>
                 </div>
-
-          // }
-        //}
-    };
-    
-}
-
-
+                }
+                
+          }
+        };
+        return <g></g>;
+    }
+};
 
 export default Tooltip;
