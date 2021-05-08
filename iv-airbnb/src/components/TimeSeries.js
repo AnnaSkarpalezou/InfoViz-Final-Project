@@ -26,22 +26,23 @@ function TimeSeries(props) {
     .curve(d3.curveBasis)
     (data);
   
-  console.log(data)
-  
 
     return <g transform={`translate(${x + 70}, ${y + 50})`} >
-      <path d={p1} fill={'blue'} />
-      <text transform={`translate(${-50}, ${-25})rotate(0)`}>
+      <path d={p1} fill={'darkblue'} />
+      <text transform={`translate(${315}, ${-75})rotate(0)`} style={{fontSize:'20px' }}>
+                    {'Popularity of'}
+            </text>
+      <text transform={`translate(${-55}, ${-30})rotate(0)`} style={{fontSize:'20px' }}>
                     {"Total Reviews"}
             </text>
-      <text transform={`translate(${width + 200}, ${height + 5})rotate(0)`}>
+      <text transform={`translate(${width + 200}, ${height + 5})rotate(0)`} style={{fontSize:'20px' }}>
                     {"Month"}
             </text>
       <line x1={0} y1={(height)} x2={width + 180} y2={(height)} stroke={`black`} />
       {ticksX.map( tickValue => {
         return <g key={tickValue} transform={`translate(${xScale(tickValue)}, ${(height)})`}>
                 <line y2={10} stroke={"black"} />
-                <text transform= 'translate(5,-25)' style={{ textAnchor:'end', fontSize:'15px'}} y={50}>
+                <text transform= 'translate(12,-25)' style={{ textAnchor:'end', fontSize:'15px'}} y={50}>
                 {tickValue}
                 </text>
                 </g>

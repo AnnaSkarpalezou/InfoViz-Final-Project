@@ -43,8 +43,9 @@ function App() {
   const PriceData = useData(PricePath);
   const TooltipData = useData(TooltipPath);
   const monthData = useData(monthPath);
-  console.log("FFFFF");
-  console.log(TooltipData);
+  
+  // console.log("FFFFF");
+  // console.log(TooltipData);
 
   const neighbourhoodNames = [
     "青浦区 / Qingpu District",
