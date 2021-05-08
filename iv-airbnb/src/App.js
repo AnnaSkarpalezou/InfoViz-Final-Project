@@ -43,8 +43,9 @@ function App() {
   const PriceData = useData(PricePath);
   const TooltipData = useData(TooltipPath);
   const monthData = useData(monthPath);
-  console.log("FFFFF");
-  console.log(TooltipData);
+  
+  // console.log("FFFFF");
+  // console.log(TooltipData);
 
   const neighbourhoodNames = [
     "青浦区 / Qingpu District",
@@ -155,6 +156,10 @@ function App() {
     (d) => d.neighbourhood === selectedNeighbourhood
   )[0];
 
+  const districtData = monthData.filter( d=> {
+    return d.neighbourhood == selectedNeighbourhood;
+  });
+
   const mouseHoveringOn = (d) => {
     setSelectedNeighbourhood(d.neighbourhood);
     console.log("mouse over on");
@@ -177,11 +182,11 @@ function App() {
 
   const xScaleArea =  d3.scaleBand()
     .range([0, (innerWidth-420)])
-    .domain(monthData.map((d)=> d.date));
+    .domain(districtData.map((d)=> d.date));
 
   const yScaleArea = d3.scaleLinear()
-    .range([innerHeight/4,20])
-    .domain([0, d3.max(monthData, d => d.total)])
+    .range([window.innerHeight/4 + 25,0])
+    .domain([0, d3.max(districtData, d => Number(d.total))])
     .nice();
 
 
@@ -246,9 +251,9 @@ function App() {
             yScale={yScaleBar}
           />
         </svg>
-        <svg height={window.innerHeight/2}>
+        <svg height={window.innerHeight/2} style={{backgroundColor:'floralwhite'}}>
           <TimeSeries
-            data={monthData}
+            data={districtData}
             x={50}
             y={50}
             width={innerWidth/2}
