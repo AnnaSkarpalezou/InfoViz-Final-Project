@@ -25,7 +25,7 @@ function TimeSeries(props) {
     .y1(d => yScale(Number(d.total)))
     .curve(d3.curveBasis)
     (data);
-  
+    console.log()
 
     return <g transform={`translate(${x + 70}, ${y + 50})`} >
       <path d={p1} fill={'darkblue'} />
