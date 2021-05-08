@@ -9,10 +9,6 @@ function BarChart(props) {
     height,
     data,
     selectedNeighbourhood,
-    setSelectedNeighbourhood,
-    path,
-    neighbourhoodNames,
-    neighbourhoodsCount,
     mouseHoveringOn,
     mouseHoveringOff,
     xScale,
@@ -22,7 +18,7 @@ function BarChart(props) {
   const color = (d) => d.neighbourhood === selectedNeighbourhood ? "#e60969" : "#57068c";
   
   const ticksx = xScale.domain();
-  const ticksy = yScale.ticks(6);
+  const ticksy = yScale.ticks(8);
 
   if (selectedNeighbourhood === " ") {
     return (
@@ -31,7 +27,7 @@ function BarChart(props) {
           {"Average Prices of Listings per neighbourhood"}
         </text>
         <line
-          x1={0}
+          x1={100}
           y1={(height / 2) - 70}
           x2={width - 80}
           y2={(height / 2) - 70}
@@ -48,10 +44,10 @@ function BarChart(props) {
             );
         })
         }
-        <line y1={height/2 -70} y2={height / 2 -250} x1={60} x2={60} stroke={`black`} />
+        <line y1={height/2 -70} y2={height / 2 -250} x1={100} x2={100} stroke={`black`} />
         {ticksy.map((tickValue) => {
           return (
-            <g key={tickValue} transform={`translate(50, ${yScale(tickValue)-16})`}>
+            <g key={tickValue} transform={`translate(90, ${yScale(tickValue)-16})`}>
               <line x2={10} stroke={"black"} />
               <text style={{ textAnchor: "end", fontSize: "18px" }}>
                 {tickValue}
@@ -85,7 +81,7 @@ function BarChart(props) {
         {"Average Prices of Listings per neighbourhood"}
       </text>
       <line
-        x1={0}
+        x1={100}
         y1={(height / 2) - 70}
         x2={width - 80}
         y2={(height / 2) - 70}
@@ -102,10 +98,10 @@ function BarChart(props) {
           );
       })
       }
-      <line y1={height/2 -70} y2={height / 2 -250} x1={60} x2={60} stroke={`black`} />
+      <line y1={height/2 -70} y2={height / 2 -250} x1={100} x2={100} stroke={`black`} />
       {ticksy.map((tickValue) => {
         return (
-          <g key={tickValue} transform={`translate(50, ${yScale(tickValue)-16})`}>
+          <g key={tickValue} transform={`translate(90, ${yScale(tickValue)-16})`}>
             <line x2={10} stroke={"black"} />
             <text style={{ textAnchor: "end", fontSize: "18px" }}>
               {tickValue}
