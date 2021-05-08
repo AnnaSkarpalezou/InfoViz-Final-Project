@@ -27,6 +27,8 @@ function GenerateMap(props) {
     path,
     neighbourhoodNames,
     neighbourhoodsCount,
+    setTooltipX, 
+    setTooltipY
   } = props;
 
   const mapData = useMap(path);
@@ -62,6 +64,7 @@ function GenerateMap(props) {
 
     if (selectedNeighbourhood != " ") {
       opacity = 0.7;
+
     }
 
     if (neighbourhoodNames[idx] == selectedNeighbourhood) {
@@ -82,9 +85,13 @@ function GenerateMap(props) {
         neighbourhood={neighbourhoodNames[idx]}
         onMouseEnter={() => {
           setSelectedNeighbourhood(neighbourhoodNames[idx]);
+          setTooltipX(300);
+          setTooltipY(300);
         }}
         onMouseLeave={() => {
           setSelectedNeighbourhood(" ");
+          setTooltipX(null);
+          setTooltipY(null);
         }}
       />
     );

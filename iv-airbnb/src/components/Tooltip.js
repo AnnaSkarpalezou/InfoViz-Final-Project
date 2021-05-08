@@ -5,7 +5,7 @@ import TimeSeries from "./TimeSeries";
 import { range, select } from "d3";
 
 function Tooltip(props) {
-    const {d, data, left, top, height, width} = props;
+    const {d, data, left, top} = props;
         //console.log(d);
     if (d === null)  {
         return <g></g>;
@@ -28,8 +28,8 @@ function Tooltip(props) {
                     border: "2px",
                     borderRadius: "8px",
                     pointerEvents: "none",
-                    left: `${left+580}px`,
-                    top: `${top-500}px`
+                    left: `${left}px`,
+                    top: `${top}px`
                 };
 
 

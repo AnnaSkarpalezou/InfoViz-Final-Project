@@ -22,6 +22,9 @@ function useData(csvPath) {
 
 function App() {
   const [selectedNeighbourhood, setSelectedNeighbourhood] = React.useState(" ");
+  const [tooltipX, setTooltipX] = React.useState(null);
+  const [tooltipY, setTooltipY] = React.useState(null);
+
 
   const width = 1500;
   const height = 990;
@@ -162,11 +165,15 @@ function App() {
 
   const mouseHoveringOn = (d) => {
     setSelectedNeighbourhood(d.neighbourhood);
+    setTooltipX(d.clientX);
+    setTooltipY(d.clientY);
     console.log("mouse over on");
   };
   const mouseHoveringOff = () => {
     setSelectedNeighbourhood(" ");
     console.log("mouse over off");
+    setTooltipX(null);
+    setTooltipY(null);
   };
 
   const xScaleBar = d3
@@ -176,8 +183,8 @@ function App() {
 
   const yScaleBar = d3
     .scaleLinear()
-    .range([window.innerHeight / 8, 0])
-    .domain([0, d3.max(PriceData, (d) => d.price)])
+    .range([window.innerHeight / 4, 0])
+    .domain([0, d3.max(PriceData, (d) => Number(d.price))])
     .nice();
 
   const xScaleArea =  d3.scaleBand()
@@ -218,14 +225,16 @@ function App() {
           selectedNeighbourhood={selectedNeighbourhood}
           neighbourhoodNames={neighbourhoodNames}
           neighbourhoodsCount={neighbourhoodGrouping}
+          setTooltipX={setTooltipX} 
+          setTooltipY={setTooltipY}
         />
         <div id="selectNeighbourhood">{": " + selectedNeighbourhood}</div>
 
         <Tooltip
           d={selectedNeighbourhood}
           data={TooltipData}
-          left={margin.gap}
-          top={margin.top + 80 + innerHeight / 2}
+          left={tooltipX}
+          top={tooltipY}
           height={innerHeight / 2}
           width={(innerWidth / 2)+500}
           xScale={xScaleBar}

@@ -33,21 +33,21 @@ function BarChart(props) {
           y2={(height / 2) - 70}
           stroke={`black`}
         />
+        <line y1={height/2 -70} y2={height / 2 -250} x1={100} x2={100} stroke={`black`} />
+        <g transform={`translate(${0}, ${-18})`}>
         {ticksx.map((tickValue) => {
           return (
-            <g key={tickValue} transform={`translate(${xScale(tickValue)}, ${height / 2})`}>
-            <text style={{textAnchor: 'start', fontSize:'10px' }} y={(height / 2) - 70} transform={`rotate(75, 0, ${(height / 2) - 70})`}>
-              {tickValue}
+            <g key={tickValue} transform={`translate(${xScale(tickValue)}, ${(height / 2)})`}>
+            <text style={{textAnchor: 'start', fontSize:'10px' }} x={-80} y={(height / 2) - 170} transform={`rotate(50, 0, ${(height / 2) - 83})`}>
+              {tickValue.split('/')[1].slice(0,tickValue.split('/')[1].length-8)}
             </text>
-            <line y2={5} x1={60}  stroke={"black"} />
             </g>
             );
         })
         }
-        <line y1={height/2 -70} y2={height / 2 -250} x1={100} x2={100} stroke={`black`} />
         {ticksy.map((tickValue) => {
           return (
-            <g key={tickValue} transform={`translate(90, ${yScale(tickValue)-16})`}>
+            <g key={tickValue} transform={`translate(90, ${yScale(tickValue)-100})`}>
               <line x2={10} stroke={"black"} />
               <text style={{ textAnchor: "end", fontSize: "18px" }}>
                 {tickValue}
@@ -55,6 +55,8 @@ function BarChart(props) {
             </g>
           );
         })}
+        </g>
+        <g transform={`translate(${0}, ${-115})`}>
         {data.map((d) => {
           //   console.log(d.neighbourhood);
           //   console.log(d.price);
@@ -62,9 +64,9 @@ function BarChart(props) {
             <rect
               key={d.neighbourhood + "Bar"}
               x={xScale(d.neighbourhood)}
-              y={yScale(d.price)}
+              y={yScale(Number(d.price))}
               width={xScale.bandwidth() -3 } //error
-              height={height / 2 -70 -yScale(d.price)}
+              height={height / 2 +45 -yScale(d.price)}
               fill={"#57068c"}
               stroke={"black"}
               onMouseOver={() => mouseHoveringOn(d)}
@@ -72,6 +74,7 @@ function BarChart(props) {
             />
           );
         })}
+        </g>
       </g>
     );
   } else {
@@ -87,28 +90,30 @@ function BarChart(props) {
         y2={(height / 2) - 70}
         stroke={`black`}
       />
-      {ticksx.map((tickValue) => {
-        return (
-          <g key={tickValue} transform={`translate(${xScale(tickValue)}, ${height / 2})`}>
-          <text style={{textAnchor: 'start', fontSize:'10px' }} y={(height / 2) - 70} transform={`rotate(75, 0, ${(height / 2) - 70})`}>
-            {tickValue}
-          </text>
-          <line y2={5} x1={60}  stroke={"black"} />
-          </g>
-          );
-      })
-      }
-      <line y1={height/2 -70} y2={height / 2 -250} x1={100} x2={100} stroke={`black`} />
-      {ticksy.map((tickValue) => {
-        return (
-          <g key={tickValue} transform={`translate(90, ${yScale(tickValue)-16})`}>
-            <line x2={10} stroke={"black"} />
-            <text style={{ textAnchor: "end", fontSize: "18px" }}>
-              {tickValue}
+        <line y1={height/2 -70} y2={height / 2 -250} x1={100} x2={100} stroke={`black`} />
+        <g transform={`translate(${0}, ${-18})`}>
+        {ticksx.map((tickValue) => {
+          return (
+            <g key={tickValue} transform={`translate(${xScale(tickValue)}, ${(height / 2)})`}>
+            <text style={{textAnchor: 'start', fontSize:'10px' }} x={-80} y={(height / 2) - 170} transform={`rotate(50, 0, ${(height / 2) - 83})`}>
+              {tickValue.split('/')[1].slice(0,tickValue.split('/')[1].length-8)}
             </text>
-          </g>
-        );
-      })}
+            </g>
+            );
+        })
+        }
+        {ticksy.map((tickValue) => {
+          return (
+            <g key={tickValue} transform={`translate(90, ${yScale(tickValue)-100})`}>
+              <line x2={10} stroke={"black"} />
+              <text style={{ textAnchor: "end", fontSize: "18px" }}>
+                {tickValue}
+              </text>
+            </g>
+          );
+        })}
+        </g>
+        <g transform={`translate(${0}, ${-115})`}>
         {data.map((d) => {
           //console.log(key);
           return (
@@ -117,7 +122,7 @@ function BarChart(props) {
               x={xScale(d.neighbourhood)}
               y={yScale(d.price)}
               width={xScale.bandwidth()-3} //error
-              height={height / 2 -70 - yScale(d.price)}
+              height={height / 2 +45 - yScale(d.price)}
               fill={color(d)}
               stroke={"black"}
               onMouseOver={() => mouseHoveringOn(d)}
@@ -126,6 +131,7 @@ function BarChart(props) {
           );
 
         })}
+        </g>
       </g>
     );
   }
