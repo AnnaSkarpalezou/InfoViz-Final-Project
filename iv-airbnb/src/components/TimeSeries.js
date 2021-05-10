@@ -25,17 +25,17 @@ function TimeSeries(props) {
     .y1(d => yScale(Number(d.total)))
     .curve(d3.curveBasis)
     (data);
-    console.log()
 
-    return <g transform={`translate(${x + 70}, ${y + 50})`} >
+    return <g transform={`translate(${x + 105}, ${y + 50})`} >
       <path d={p1} fill={'darkblue'} />
-      <text transform={`translate(${315}, ${-75})rotate(0)`} style={{fontSize:'20px' }}>
-                    {'Popularity of'}
+      <text transform={`translate(${325}, ${-55})rotate(0)`} style={{fontSize:'20px' }}>
+                    {'Popularity of District'}
+
             </text>
-      <text transform={`translate(${-55}, ${-30})rotate(0)`} style={{fontSize:'20px' }}>
+      <text transform={`translate(${-55}, ${-30})rotate(0)`} style={{fontSize:'18px' }}>
                     {"Total Reviews"}
             </text>
-      <text transform={`translate(${width + 200}, ${height - 87})rotate(0)`} style={{fontSize:'20px' }}>
+      <text transform={`translate(${width + 200}, ${height - 87})rotate(0)`} style={{fontSize:'18px' }}>
                     {"Month"}
             </text>
       <line x1={0} y1={(height - 92)} x2={width + 180} y2={(height - 92)} stroke={`black`} />
