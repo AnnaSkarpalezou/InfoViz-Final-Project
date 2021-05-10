@@ -165,8 +165,8 @@ function App() {
 
   const mouseHoveringOn = (d) => {
     setSelectedNeighbourhood(d.neighbourhood);
-    setTooltipX(d.clientX);
-    setTooltipY(d.clientY);
+    setTooltipX(d.pageX);
+    setTooltipY(d.pageY);
     console.log("mouse over on");
   };
   const mouseHoveringOff = () => {
@@ -243,7 +243,7 @@ function App() {
       </div>
 
       <div id="derivatives">
-        <svg height={window.innerHeight/2} style={{backgroundColor:'floralwhite'}}>
+        <svg height={window.innerHeight/2} style={{backgroundColor:'floralwhite'}} >
           <BarChart 
             x={margin.left}
             y={margin.top+200}
@@ -259,6 +259,7 @@ function App() {
             xScale={xScaleBar}
             yScale={yScaleBar}
           />
+    
         </svg>
         <svg height={window.innerHeight/2} style={{backgroundColor:'floralwhite'}}>
           <TimeSeries

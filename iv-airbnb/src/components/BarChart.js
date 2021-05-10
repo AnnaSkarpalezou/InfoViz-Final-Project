@@ -1,5 +1,5 @@
 import React from "react";
-import * as d3 from "d3";
+
 
 function BarChart(props) {
   const {
@@ -65,7 +65,7 @@ function BarChart(props) {
               key={d.neighbourhood + "Bar"}
               x={xScale(d.neighbourhood)}
               y={yScale(Number(d.price))}
-              width={xScale.bandwidth() -3 } //error
+              width={xScale.bandwidth() -5 } //error
               height={height / 2 +45 -yScale(d.price)}
               fill={"#57068c"}
               stroke={"black"}
@@ -121,7 +121,7 @@ function BarChart(props) {
               key={d.neighbourhood + "Bar"}
               x={xScale(d.neighbourhood)}
               y={yScale(d.price)}
-              width={xScale.bandwidth()-3} //error
+              width={xScale.bandwidth()-5} //error
               height={height / 2 +45 - yScale(d.price)}
               fill={color(d)}
               stroke={"black"}

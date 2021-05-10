@@ -83,10 +83,10 @@ function GenerateMap(props) {
         stroke={"#57068c"}
         strokeWidth={"1px"}
         neighbourhood={neighbourhoodNames[idx]}
-        onMouseEnter={() => {
+        onMouseEnter={(event) => {
           setSelectedNeighbourhood(neighbourhoodNames[idx]);
-          setTooltipX(300);
-          setTooltipY(300);
+          setTooltipX(event.pageX);
+          setTooltipY(event.pageY);
         }}
         onMouseLeave={() => {
           setSelectedNeighbourhood(" ");
