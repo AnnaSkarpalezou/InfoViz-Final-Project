@@ -23,7 +23,7 @@ function BarChart(props) {
   if (selectedNeighbourhood === " ") {
     return (
       <g transform={`translate(${x}, ${y})`}>
-        <text style={{ textAnchor: "start", fontSize: "15px" }} transform={`translate(${width / 3}, -120)`}>
+        <text style={{ textAnchor: "start", fontSize: "20px" }} transform={`translate(${width / 3 -50}, -140)`}>
           {"Average Prices of Listings per neighbourhood"}
         </text>
         <line
@@ -80,7 +80,7 @@ function BarChart(props) {
   } else {
     return (
       <g transform={`translate(${x}, ${y})`}>
-      <text style={{ textAnchor: "start", fontSize: "15px" }} transform={`translate(${width / 3}, -120)`}>
+      <text style={{ textAnchor: "start", fontSize:'20px'}} transform={`translate(${width / 3 -50}, -140)`}>
         {"Average Prices of Listings per neighbourhood"}
       </text>
       <line

@@ -188,7 +188,7 @@ function App() {
     .nice();
 
   const xScaleArea =  d3.scaleBand()
-    .range([0, (innerWidth-420)])
+    .range([0, (innerWidth-800)])
     .domain(districtData.map((d)=> d.date));
 
   const yScaleArea = d3.scaleLinear()
