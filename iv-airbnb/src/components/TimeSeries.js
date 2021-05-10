@@ -14,7 +14,8 @@ function TimeSeries(props) {
     SelectedNeighbourhood,
     setSelectedNeighbourhood,
     mouseHoveringOn,
-    mouseHoveringOff} = props;
+    mouseHoveringOff,
+} = props;
 
   const ticksX = xScale.domain();
   const ticksY = yScale.ticks(10);

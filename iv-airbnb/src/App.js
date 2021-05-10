@@ -165,8 +165,8 @@ function App() {
 
   const mouseHoveringOn = (d) => {
     setSelectedNeighbourhood(d.neighbourhood);
-    setTooltipX(d.pageX);
-    setTooltipY(d.pageY);
+    setTooltipX(480);
+    setTooltipY(550);
     console.log("mouse over on");
   };
   const mouseHoveringOff = () => {
@@ -258,6 +258,8 @@ function App() {
             mouseHoveringOff={mouseHoveringOff}
             xScale={xScaleBar}
             yScale={yScaleBar}
+            setTooltipX={setTooltipX} 
+            setTooltipY={setTooltipY}
           />
     
         </svg>

@@ -13,12 +13,15 @@ function BarChart(props) {
     mouseHoveringOff,
     xScale,
     yScale,
-  } = props;
+    setTooltipX,
+    setTooltipY
+    } = props;
 
   const color = (d) => d.neighbourhood === selectedNeighbourhood ? "#e60969" : "#57068c";
   
   const ticksx = xScale.domain();
   const ticksy = yScale.ticks(8);
+
 
   if (selectedNeighbourhood === " ") {
     return (
@@ -69,8 +72,10 @@ function BarChart(props) {
               height={height / 2 +45 -yScale(d.price)}
               fill={"#57068c"}
               stroke={"black"}
-              onMouseOver={() => mouseHoveringOn(d)}
+              onMouseOver={() => mouseHoveringOn(d)
+              }
               onMouseOut={mouseHoveringOff}
+
             />
           );
         })}
