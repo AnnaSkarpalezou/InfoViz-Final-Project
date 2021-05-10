@@ -28,7 +28,8 @@ function GenerateMap(props) {
     neighbourhoodNames,
     neighbourhoodsCount,
     setTooltipX, 
-    setTooltipY
+    setTooltipY,
+    name
   } = props;
 
   const mapData = useMap(path);
@@ -106,7 +107,7 @@ function GenerateMap(props) {
 
       <Legend x={legendStart[0]} y={legendStart[1]} />
       <text x={30} y={40} id="vizTitle">
-        AIRBNBS IN SHANGHAI
+        AIRBNBS IN {name}
       </text>
     </svg>
   );
