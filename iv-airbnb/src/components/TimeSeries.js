@@ -21,7 +21,7 @@ function TimeSeries(props) {
 
   const p1 = d3.area()
     .x(d => xScale(d.date))
-    .y0(height)
+    .y0(height - 92)
     .y1(d => yScale(Number(d.total)))
     .curve(d3.curveBasis)
     (data);
@@ -35,19 +35,19 @@ function TimeSeries(props) {
       <text transform={`translate(${-55}, ${-30})rotate(0)`} style={{fontSize:'20px' }}>
                     {"Total Reviews"}
             </text>
-      <text transform={`translate(${width + 200}, ${height + 5})rotate(0)`} style={{fontSize:'20px' }}>
+      <text transform={`translate(${width + 200}, ${height - 87})rotate(0)`} style={{fontSize:'20px' }}>
                     {"Month"}
             </text>
-      <line x1={0} y1={(height)} x2={width + 180} y2={(height)} stroke={`black`} />
+      <line x1={0} y1={(height - 92)} x2={width + 180} y2={(height - 92)} stroke={`black`} />
       {ticksX.map( tickValue => {
-        return <g key={tickValue} transform={`translate(${xScale(tickValue)}, ${(height)})`}>
+        return <g key={tickValue} transform={`translate(${xScale(tickValue)}, ${(height) - 92})`}>
                 <line y2={10} stroke={"black"} />
                 <text transform= 'translate(12,-25)' style={{ textAnchor:'end', fontSize:'15px'}} y={50}>
                 {tickValue}
                 </text>
                 </g>
               })}
-      <line y1={(height)} y2={(height - 360)} stroke={`black`} />
+      <line y1={(height - 92)} y2={(height - 360)} stroke={`black`} />
       {ticksY.map( tickValue => {
         return <g key={tickValue} transform={`translate(-5, ${yScale(tickValue)})`}>
                 <line x2={5} stroke={"black"} />
