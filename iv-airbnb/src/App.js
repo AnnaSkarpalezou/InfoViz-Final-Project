@@ -40,15 +40,36 @@ if(selectedCity===" "){
         placeholder="Pick a City"
         options={['Shanghai', 'Beijing']}
         value="one"
-        //onChange={(value) => console.log('change!', value)}
-        onChange={(d) => Select(d)}// always fires once a selection happens even if there is no change
-        //onClose={(closedBySelection) => console.log('closedBySelection?:', closedBySelection)}
-        //onOpen={() => console.log('open!')}
+        onChange={(d) => Select(d)}
       />
       </div>
-      <text style={{ textAnchor: "start", fontSize:'20px'}} transform={`translate(${width / 3 -50}, -140)`}>
-        {"Choose a city to get started!"}
-      </text>
+      <div><block></block></div>
+      <div> 
+
+      <li class="list-item">
+        <div class="list-item-column list-item-column--avatar">
+        </div>
+          <div class="list-item-column list-item-column--info">
+            <text x={30} y={200} id="vizTitle">
+              {"Visualizing Airbnb Data for Chinese Cities"}
+            </text>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <h3 class="list-item-name">Eva Ferguson</h3>
+            <h4 class="list-item-title">Founder &amp; Lead Developer</h4>
+            <div class="list-item-biography">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quisquam asperiores laborum quae doloremque voluptates explicabo libero deserunt qui. Atque!</p>
+            </div>
+            <text x={30} y={200} id="vizTitle">
+              {"Choose a city to get started!"}
+            </text>
+          </div>
+        </li>
+      </div>
   </div>)
 } else if(selectedCity.label=='Shanghai'){
     return (
@@ -59,10 +80,7 @@ if(selectedCity===" "){
           placeholder="Pick a City"
           options={['Shanghai', 'Beijing']}
           value="one"
-          //onChange={(value) => console.log('change!', value)}
-          onSelect={(d) => Select(d)}// always fires once a selection happens even if there is no change
-          //onClose={(closedBySelection) => console.log('closedBySelection?:', closedBySelection)}
-          //onOpen={() => console.log('open!')}
+          onSelect={(d) => Select(d)}
         />
         </div>
 
@@ -82,10 +100,7 @@ if(selectedCity===" "){
         placeholder="Pick a City"
         options={['Shanghai', 'Beijing']}
         value="one"
-        //onChange={(value) => console.log('change!', value)}
-        onSelect={(d) => Select(d)}// always fires once a selection happens even if there is no change
-        //onClose={(closedBySelection) => console.log('closedBySelection?:', closedBySelection)}
-        //onOpen={() => console.log('open!')}
+        onSelect={(d) => Select(d)}
       />
       </div>
 
@@ -107,10 +122,7 @@ if(selectedCity===" "){
         placeholder="Pick a City"
         options={['Shanghai', 'Beijing']}
         value="one"
-        //onChange={(value) => console.log('change!', value)}
-        onSelect={(d) => Select(d)}// always fires once a selection happens even if there is no change
-        //onClose={(closedBySelection) => console.log('closedBySelection?:', closedBySelection)}
-        //onOpen={() => console.log('open!')}
+        onSelect={(d) => Select(d)}
       />
       </div>
 
