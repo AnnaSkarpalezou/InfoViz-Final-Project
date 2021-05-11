@@ -51,6 +51,7 @@ function Beijing(props) {
   const PriceData = useData(PricePath);
   const TooltipData = useData(TooltipPath);
   const monthData = useData(monthPath);
+  console.log(monthData)
   
   // console.log("FFFFF");
   // console.log(TooltipData);
@@ -214,22 +215,7 @@ function Beijing(props) {
       polyRef.current.style.animation = "removePolyrev ease-out 0.5s forwards";
     }
   }
-  <svg height={window.innerHeight/2} style={{backgroundColor:'floralwhite'}}>
-  <TimeSeries
-    data={districtData}
-    x={50}
-    y={50}
-    width={innerWidth/2}
-    height={innerHeight/2}
-    xScale={xScaleArea}
-    yScale={yScaleArea}
-    neighbourhoodNames={neighbourhoodNames}
-    setSelectedNeighbourhood={setSelectedNeighbourhood}
-    selectedNeighbourhood={selectedNeighbourhood}
-    mouseHoveringOn={mouseHoveringOn}
-    mouseHoveringOff={mouseHoveringOff}
-  />
-</svg>
+
 
 
   
@@ -294,7 +280,22 @@ function Beijing(props) {
           />
 
         </svg>
-
+        <svg height={window.innerHeight/2} style={{backgroundColor:'floralwhite'}}>
+        <TimeSeries
+          data={districtData}
+          x={50}
+          y={50}
+          width={innerWidth/2}
+          height={innerHeight/2}
+          xScale={xScaleArea}
+          yScale={yScaleArea}
+          neighbourhoodNames={neighbourhoodNames}
+          setSelectedNeighbourhood={setSelectedNeighbourhood}
+          selectedNeighbourhood={selectedNeighbourhood}
+          mouseHoveringOn={mouseHoveringOn}
+          mouseHoveringOff={mouseHoveringOff}
+        />
+      </svg>
         <svg
           width={uiPolyWidth}
           height={window.innerHeight}
