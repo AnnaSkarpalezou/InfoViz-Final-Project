@@ -6,8 +6,8 @@ import TimeSeries from "./components/TimeSeries.js";
 import BarChartB from "./components/BarChartB.js";
 import Tooltip from "./components/Tooltip.js";
 import * as d3 from "d3";
-import { Dropdown, Selection } from 'react-dropdown-now';
-import 'react-dropdown-now/style.css';
+import { Dropdown, Selection } from "react-dropdown-now";
+import "react-dropdown-now/style.css";
 
 function useData(csvPath) {
   const [dataAll, setData] = React.useState([]);
@@ -23,13 +23,10 @@ function useData(csvPath) {
 }
 
 function Beijing(props) {
-  const {
-    name
-  }=props;
+  const { name } = props;
   const [selectedNeighbourhood, setSelectedNeighbourhood] = React.useState(" ");
   const [tooltipX, setTooltipX] = React.useState(null);
   const [tooltipY, setTooltipY] = React.useState(null);
-
 
   const width = 1500;
   const height = 990;
@@ -51,27 +48,28 @@ function Beijing(props) {
   const PriceData = useData(PricePath);
   const TooltipData = useData(TooltipPath);
   const monthData = useData(monthPath);
-  
+
   // console.log("FFFFF");
   // console.log(TooltipData);
-
-  const neighbourhoodNames = 
-    ['东城区',
-    '丰台区 / Fengtai',
-    '大兴区 / Daxing',
-    '密云县 / Miyun',
-    '平谷区 / Pinggu',
-    '延庆县 / Yanqing',
-    '怀柔区 / Huairou',
-    '房山区',
-    '昌平区',
-    '朝阳区 / Chaoyang',
-    '海淀区',
-    '石景山区',
-    '西城区',
-    '通州区 / Tongzhou',
-    '门头沟区 / Mentougou',
-    '顺义区 / Shunyi'];
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  const neighbourhoodNames = [
+    "东城区",
+    "丰台区 / Fengtai",
+    "大兴区 / Daxing",
+    "密云县 / Miyun",
+    "平谷区 / Pinggu",
+    "延庆县 / Yanqing",
+    "怀柔区 / Huairou",
+    "房山区",
+    "昌平区",
+    "朝阳区 / Chaoyang",
+    "海淀区",
+    "石景山区",
+    "西城区",
+    "通州区 / Tongzhou",
+    "门头沟区 / Mentougou",
+    "顺义区 / Shunyi",
+  ];
 
   let neighbourhoodGrouping = [
     [],
@@ -94,67 +92,67 @@ function Beijing(props) {
 
   dataAll.filter(function (d) {
     //"青浦区 / Qingpu District"
-    if (d.neighbourhood === '东城区') {
+    if (d.neighbourhood === "东城区") {
       neighbourhoodGrouping[0].push(d);
     }
     //"黄浦区 / Huangpu District"
-    if (d.neighbourhood === '丰台区 / Fengtai') {
+    if (d.neighbourhood === "丰台区 / Fengtai") {
       neighbourhoodGrouping[1].push(d);
     }
     //"浦东新区 / Pudong"
-    if (d.neighbourhood === '大兴区 / Daxing') {
+    if (d.neighbourhood === "大兴区 / Daxing") {
       neighbourhoodGrouping[2].push(d);
     }
     //"杨浦区 / Yangpu District"
-    if (d.neighbourhood === '密云县 / Miyun') {
+    if (d.neighbourhood === "密云县 / Miyun") {
       neighbourhoodGrouping[3].push(d);
     }
     //"虹口区 / Hongkou District"
-    if (d.neighbourhood === '平谷区 / Pinggu') {
+    if (d.neighbourhood === "平谷区 / Pinggu") {
       neighbourhoodGrouping[4].push(d);
     }
     //"静安区 / Jing'an District"
-    if (d.neighbourhood === '延庆县 / Yanqing') {
+    if (d.neighbourhood === "延庆县 / Yanqing") {
       neighbourhoodGrouping[5].push(d);
     }
     //"宝山区 / Baoshan District"
-    if (d.neighbourhood === '怀柔区 / Huairou') {
+    if (d.neighbourhood === "怀柔区 / Huairou") {
       neighbourhoodGrouping[6].push(d);
     }
     //"普陀区 / Putuo District"
-    if (d.neighbourhood === '房山区') {
+    if (d.neighbourhood === "房山区") {
       neighbourhoodGrouping[7].push(d);
     }
     //"长宁区 / Changning District"
-    if (d.neighbourhood === '昌平区') {
+    if (d.neighbourhood === "昌平区") {
       neighbourhoodGrouping[8].push(d);
     }
     //"徐汇区 / Xuhui District"
-    if (d.neighbourhood === '朝阳区 / Chaoyang') {
+    if (d.neighbourhood === "朝阳区 / Chaoyang") {
       neighbourhoodGrouping[9].push(d);
     }
     //"闵行区 / Minhang District"
-    if (d.neighbourhood === '海淀区') {
+    if (d.neighbourhood === "海淀区") {
       neighbourhoodGrouping[10].push(d);
     }
     //"嘉定区 / Jiading District"
-    if (d.neighbourhood === '石景山区') {
+    if (d.neighbourhood === "石景山区") {
       neighbourhoodGrouping[11].push(d);
     }
     //"崇明区 / Chongming District"
-    if (d.neighbourhood === '西城区') {
+    if (d.neighbourhood === "西城区") {
       neighbourhoodGrouping[12].push(d);
     }
     //"奉贤区 / Fengxian District"
-    if (d.neighbourhood === '通州区 / Tongzhou') {
+    if (d.neighbourhood === "通州区 / Tongzhou") {
       neighbourhoodGrouping[13].push(d);
     }
     //"金山区 / Jinshan District"
-    if (d.neighbourhood ==='门头沟区 / Mentougou') {
+    if (d.neighbourhood === "门头沟区 / Mentougou") {
       neighbourhoodGrouping[14].push(d);
     }
     //"松江区 / Songjiang District"
-    if (d.neighbourhood === '顺义区 / Shunyi') {
+    if (d.neighbourhood === "顺义区 / Shunyi") {
       neighbourhoodGrouping[15].push(d);
     }
   });
@@ -163,7 +161,7 @@ function Beijing(props) {
     (d) => d.neighbourhood === selectedNeighbourhood
   )[0];
 
-  const districtData = monthData.filter( d=> {
+  const districtData = monthData.filter((d) => {
     return d.neighbourhood == selectedNeighbourhood;
   });
 
@@ -191,15 +189,16 @@ function Beijing(props) {
     .domain([0, d3.max(PriceData, (d) => Number(d.price))])
     .nice();
 
-  const xScaleArea =  d3.scaleBand()
-    .range([0, (innerWidth-800)])
-    .domain(districtData.map((d)=> d.date));
+  const xScaleArea = d3
+    .scaleBand()
+    .range([0, innerWidth - 800])
+    .domain(districtData.map((d) => d.date));
 
-  const yScaleArea = d3.scaleLinear()
-    .range([window.innerHeight/4 + 25,0])
-    .domain([0, d3.max(districtData, d => Number(d.total))])
+  const yScaleArea = d3
+    .scaleLinear()
+    .range([window.innerHeight / 4 + 25, 0])
+    .domain([0, d3.max(districtData, (d) => Number(d.total))])
     .nice();
-
 
   if (polyRef.current != null) {
     if (
@@ -215,30 +214,23 @@ function Beijing(props) {
     }
   }
 
-
-
-  
   // normal usage
-
 
   return (
     <div className="App">
-
-
       <div id="choropleth">
-
         <GenerateMap
           x={margin.left}
-          y={margin.top+50}
+          y={margin.top + 50}
           WIDTH={innerWidth / 2}
-          HEIGHT={innerHeight + margin.gap+50}
+          HEIGHT={innerHeight + margin.gap - 10}
           data={dataAll}
           path={mapPath}
           setSelectedNeighbourhood={setSelectedNeighbourhood}
           selectedNeighbourhood={selectedNeighbourhood}
           neighbourhoodNames={neighbourhoodNames}
           neighbourhoodsCount={neighbourhoodGrouping}
-          setTooltipX={setTooltipX} 
+          setTooltipX={setTooltipX}
           setTooltipY={setTooltipY}
           name={name}
         />
@@ -251,20 +243,23 @@ function Beijing(props) {
           left={tooltipX}
           top={tooltipY}
           height={innerHeight / 2}
-          width={(innerWidth / 2)+500}
+          width={innerWidth / 2 + 500}
           xScale={xScaleBar}
           yScale={yScaleBar}
         />
-        </div>
+      </div>
 
-
-        <div id="derivatives">
-        <svg height={window.innerHeight/2} width={innerWidth / 2 -60} style={{backgroundColor:'floralwhite'}} >
-          <BarChartB 
+      <div id="derivatives">
+        <svg
+          height={window.innerHeight / 2}
+          width={innerWidth / 2 - 60}
+          style={{ backgroundColor: "floralwhite" }}
+        >
+          <BarChartB
             x={-50}
-            y={margin.top+200}
+            y={margin.top + 200}
             width={innerWidth / 2}
-            height={window.innerHeight/3 + margin.gap }
+            height={window.innerHeight / 3 + margin.gap}
             data={PriceData}
             setSelectedNeighbourhood={setSelectedNeighbourhood}
             selectedNeighbourhood={selectedNeighbourhood}
@@ -274,28 +269,31 @@ function Beijing(props) {
             mouseHoveringOff={mouseHoveringOff}
             xScale={xScaleBar}
             yScale={yScaleBar}
-            setTooltipX={setTooltipX} 
+            setTooltipX={setTooltipX}
             setTooltipY={setTooltipY}
           />
-
-        </svg>
-        <svg height={window.innerHeight/2} width={innerWidth / 2 -60} style={{backgroundColor:'floralwhite'}}>
-        <TimeSeries
-          data={districtData}
-          x={-50}
-          y={50}
-          width={innerWidth/2}
-          height={innerHeight/2}
-          xScale={xScaleArea}
-          yScale={yScaleArea}
-          neighbourhoodNames={neighbourhoodNames}
-          setSelectedNeighbourhood={setSelectedNeighbourhood}
-          selectedNeighbourhood={selectedNeighbourhood}
-          mouseHoveringOn={mouseHoveringOn}
-          mouseHoveringOff={mouseHoveringOff}
-        />
         </svg>
         <svg
+          height={window.innerHeight / 2}
+          width={innerWidth / 2 - 60}
+          style={{ backgroundColor: "floralwhite" }}
+        >
+          <TimeSeries
+            data={districtData}
+            x={-50}
+            y={50}
+            width={innerWidth / 2}
+            height={innerHeight / 2}
+            xScale={xScaleArea}
+            yScale={yScaleArea}
+            neighbourhoodNames={neighbourhoodNames}
+            setSelectedNeighbourhood={setSelectedNeighbourhood}
+            selectedNeighbourhood={selectedNeighbourhood}
+            mouseHoveringOn={mouseHoveringOn}
+            mouseHoveringOff={mouseHoveringOff}
+          />
+        </svg>
+        {/* <svg
           width={uiPolyWidth}
           height={window.innerHeight}
           id="polygons"
@@ -315,9 +313,8 @@ function Beijing(props) {
               0 + "," + window.innerHeight,
             ]}
           />
-        </svg>
+        </svg> */}
       </div>
-
     </div>
   );
 }

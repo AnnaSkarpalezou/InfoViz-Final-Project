@@ -27,9 +27,9 @@ function GenerateMap(props) {
     path,
     neighbourhoodNames,
     neighbourhoodsCount,
-    setTooltipX, 
+    setTooltipX,
     setTooltipY,
-    name
+    name,
   } = props;
 
   const mapData = useMap(path);
@@ -65,7 +65,6 @@ function GenerateMap(props) {
 
     if (selectedNeighbourhood != " ") {
       opacity = 0.7;
-
     }
 
     if (neighbourhoodNames[idx] == selectedNeighbourhood) {
@@ -101,7 +100,7 @@ function GenerateMap(props) {
   return (
     <svg width={WIDTH} height={HEIGHT}>
       {selectedNeighbourhood}
-      <g id="neighbourhoods" transform={`translate(${x}, ${y}) scale(.8)`}>
+      <g id="neighbourhoods" transform={`translate(${x}, ${y}) scale(.75)`}>
         {neighbourhoods}
       </g>
 

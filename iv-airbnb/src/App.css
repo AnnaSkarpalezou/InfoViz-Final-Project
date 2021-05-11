@@ -1,3 +1,7 @@
+body {
+  background-color: #57068c;
+}
+
 .App {
   display: flex;
   flex-direction: row;
@@ -54,11 +58,11 @@
   flex-direction: column;
   color: #57068c;
   z-index: 2;
+  margin-left: 4em;
 }
 #derivatives {
   display: flex;
   flex-direction: column;
-  background-color: #57068c;
   width: 100%;
   z-index: 0;
 }
@@ -68,6 +72,7 @@
   fill: floralwhite;
   z-index: 1;
   animation: removePolyrev ease-out 0.5s forwards;
+  pointer-events: none;
 }
 
 @keyframes removePoly {
@@ -99,5 +104,10 @@
   font-family: "Courier New", Courier, monospace;
   font-size: 30px;
   fill: #57068c;
-  transform: translateY(-35px);
+  transform: translateY(-40px);
+}
+#coverPage {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
 }

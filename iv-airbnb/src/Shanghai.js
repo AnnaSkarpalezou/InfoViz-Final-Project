@@ -6,9 +6,9 @@ import TimeSeries from "./components/TimeSeries.js";
 import BarChart from "./components/BarChart.js";
 import Tooltip from "./components/Tooltip.js";
 import * as d3 from "d3";
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import { Dropdown, Selection } from 'react-dropdown-now';
-import 'react-dropdown-now/style.css';
+import DropdownButton from "react-bootstrap/DropdownButton";
+import { Dropdown, Selection } from "react-dropdown-now";
+import "react-dropdown-now/style.css";
 
 function useData(csvPath) {
   const [dataAll, setData] = React.useState([]);
@@ -24,13 +24,10 @@ function useData(csvPath) {
 }
 
 function Shanghai(props) {
-  const {
-    name
-  }=props;
+  const { name } = props;
   const [selectedNeighbourhood, setSelectedNeighbourhood] = React.useState(" ");
   const [tooltipX, setTooltipX] = React.useState(null);
   const [tooltipY, setTooltipY] = React.useState(null);
-
 
   const width = 1500;
   const height = 990;
@@ -52,10 +49,10 @@ function Shanghai(props) {
   const PriceData = useData(PricePath);
   const TooltipData = useData(TooltipPath);
   const monthData = useData(monthPath);
-  
+
   // console.log("FFFFF");
   // console.log(TooltipData);
-
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
   const neighbourhoodNames = [
     "青浦区 / Qingpu District",
     "黄浦区 / Huangpu District",
@@ -165,7 +162,7 @@ function Shanghai(props) {
     (d) => d.neighbourhood === selectedNeighbourhood
   )[0];
 
-  const districtData = monthData.filter( d=> {
+  const districtData = monthData.filter((d) => {
     return d.neighbourhood == selectedNeighbourhood;
   });
 
@@ -193,15 +190,16 @@ function Shanghai(props) {
     .domain([0, d3.max(PriceData, (d) => Number(d.price))])
     .nice();
 
-  const xScaleArea =  d3.scaleBand()
-    .range([0, (innerWidth-800)])
-    .domain(districtData.map((d)=> d.date));
+  const xScaleArea = d3
+    .scaleBand()
+    .range([0, innerWidth - 800])
+    .domain(districtData.map((d) => d.date));
 
-  const yScaleArea = d3.scaleLinear()
-    .range([window.innerHeight/4 + 25,0])
-    .domain([0, d3.max(districtData, d => Number(d.total))])
+  const yScaleArea = d3
+    .scaleLinear()
+    .range([window.innerHeight / 4 + 25, 0])
+    .domain([0, d3.max(districtData, (d) => Number(d.total))])
     .nice();
-
 
   if (polyRef.current != null) {
     if (
@@ -217,29 +215,23 @@ function Shanghai(props) {
     }
   }
 
-
-
-  
   // normal usage
-
 
   return (
     <div className="App">
-
       <div id="choropleth">
-
         <GenerateMap
           x={margin.left}
-          y={margin.top+50}
+          y={margin.top + 50}
           WIDTH={innerWidth / 2}
-          HEIGHT={innerHeight + margin.gap+50}
+          HEIGHT={innerHeight + margin.gap - 10}
           data={dataAll}
           path={mapPath}
           setSelectedNeighbourhood={setSelectedNeighbourhood}
           selectedNeighbourhood={selectedNeighbourhood}
           neighbourhoodNames={neighbourhoodNames}
           neighbourhoodsCount={neighbourhoodGrouping}
-          setTooltipX={setTooltipX} 
+          setTooltipX={setTooltipX}
           setTooltipY={setTooltipY}
           name={name}
         />
@@ -251,19 +243,23 @@ function Shanghai(props) {
           left={tooltipX}
           top={tooltipY}
           height={innerHeight / 2}
-          width={(innerWidth / 2)+500}
+          width={innerWidth / 2 + 500}
           xScale={xScaleBar}
           yScale={yScaleBar}
         />
       </div>
 
       <div id="derivatives">
-        <svg height={window.innerHeight/2} width={innerWidth / 2 -60} style={{backgroundColor:'floralwhite'}} >
-          <BarChart 
+        <svg
+          height={window.innerHeight / 2}
+          width={innerWidth / 2 - 60}
+          style={{ backgroundColor: "floralwhite" }}
+        >
+          <BarChart
             x={-50}
-            y={margin.top+200}
-            width={innerWidth / 2 }
-            height={window.innerHeight/3 + margin.gap }
+            y={margin.top + 200}
+            width={innerWidth / 2}
+            height={window.innerHeight / 3 + margin.gap}
             data={PriceData}
             setSelectedNeighbourhood={setSelectedNeighbourhood}
             selectedNeighbourhood={selectedNeighbourhood}
@@ -273,18 +269,21 @@ function Shanghai(props) {
             mouseHoveringOff={mouseHoveringOff}
             xScale={xScaleBar}
             yScale={yScaleBar}
-            setTooltipX={setTooltipX} 
+            setTooltipX={setTooltipX}
             setTooltipY={setTooltipY}
           />
-    
         </svg>
-        <svg height={window.innerHeight/2} width={innerWidth / 2 -60} style={{backgroundColor:'floralwhite'}}>
+        <svg
+          height={window.innerHeight / 2}
+          width={innerWidth / 2 - 60}
+          style={{ backgroundColor: "floralwhite" }}
+        >
           <TimeSeries
             data={districtData}
             x={-50}
             y={50}
-            width={innerWidth/2}
-            height={innerHeight/2}
+            width={innerWidth / 2}
+            height={innerHeight / 2}
             xScale={xScaleArea}
             yScale={yScaleArea}
             neighbourhoodNames={neighbourhoodNames}
@@ -294,7 +293,7 @@ function Shanghai(props) {
             mouseHoveringOff={mouseHoveringOff}
           />
         </svg>
-        <svg
+        {/* <svg
           width={uiPolyWidth}
           height={window.innerHeight}
           id="polygons"
@@ -314,7 +313,7 @@ function Shanghai(props) {
               0 + "," + window.innerHeight,
             ]}
           />
-        </svg>
+        </svg> */}
       </div>
     </div>
   );
