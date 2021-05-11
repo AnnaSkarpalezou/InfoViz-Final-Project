@@ -88,7 +88,7 @@ The data can be accessed through the [Airbnb Open Data Sources](http://insideair
 - Listings.csv contains basic information about the listings
 - Neighborhoods.geojson is a GeoJSON file of neighborhoods of the city, a map of Shanghai separated into districts in both English and Chinese. 
 - Reviews.csv contains the date when each listing was reviewed and the listing_id
-- 
+
 We utilised the price and neighbourhood information, grouping the listings together by neighbourhood to visualize the average price distribution across on a bar chart. We used the reviews_per_month as an estimate of popularity for each listing, which were later to be grouped together by neighbourhood and used in the area popularity chart. From Reviews.csv we will count the occurrences of a listing_id within a month (as gathered from the date), to gaze at the popularity and availability of a listing for each month. 
 	Since we wanted to get aggregate statistics by neighborhood to show on our tooltip, we decided to do some data preprocessing and munging in python. We mainly used the library pandas, using the function group_by to get by neighbourhood info. We then used the .mean(), .max(), .min() and .count() functions to get the average, maximum and minimum price of listings per neighbourhood, the number of each type of listings (Entire home/apartments, Private rooms, Shared rooms) per neighbourhood and the average number of reviews per neighbourhood per month. The relevant code can be found on data_munging.ipynb.
 
@@ -131,9 +131,7 @@ Project Link: [https://github.com/AnnaSkarpalezou/InfoViz-Final-Project](https:/
 
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
 [license-url]: https://opensource.org/licenses/MIT
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+
 
 
 
