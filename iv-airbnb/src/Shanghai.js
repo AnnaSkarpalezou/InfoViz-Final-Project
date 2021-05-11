@@ -258,11 +258,11 @@ function Shanghai(props) {
       </div>
 
       <div id="derivatives">
-        <svg height={window.innerHeight/2} style={{backgroundColor:'floralwhite'}} >
+        <svg height={window.innerHeight/2} width={innerWidth / 2 -60} style={{backgroundColor:'floralwhite'}} >
           <BarChart 
-            x={margin.left}
+            x={-50}
             y={margin.top+200}
-            width={innerWidth / 2}
+            width={innerWidth / 2 }
             height={window.innerHeight/3 + margin.gap }
             data={PriceData}
             setSelectedNeighbourhood={setSelectedNeighbourhood}
@@ -278,10 +278,10 @@ function Shanghai(props) {
           />
     
         </svg>
-        <svg height={window.innerHeight/2} style={{backgroundColor:'floralwhite'}}>
+        <svg height={window.innerHeight/2} width={innerWidth / 2 -60} style={{backgroundColor:'floralwhite'}}>
           <TimeSeries
             data={districtData}
-            x={50}
+            x={-50}
             y={50}
             width={innerWidth/2}
             height={innerHeight/2}

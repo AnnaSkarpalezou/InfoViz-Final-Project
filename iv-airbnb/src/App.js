@@ -16,7 +16,7 @@ import 'react-dropdown-now/style.css';
 
 function App() {
 
-  const width = 1500;
+  const width = 1600;
   const height = 990;
   const margin = { top: 70, right: 40, bottom: 160, left: 60, gap: 40 };
   const [selectedCity, setSelectedCity] = React.useState(" ");
@@ -43,33 +43,31 @@ if(selectedCity===" "){
         onChange={(d) => Select(d)}
       />
       </div>
-      <div><block></block></div>
-      <div> 
+      <div > 
+      <div styles="text-align:center;">
 
-      <li class="list-item">
-        <div class="list-item-column list-item-column--avatar">
-        </div>
-          <div class="list-item-column list-item-column--info">
-            <text x={30} y={200} id="vizTitle">
+          <svg></svg>        
+            <h1 x={100} y={200} id="vizTitle" >
               {"Visualizing Airbnb Data for Chinese Cities"}
-            </text>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <h3 class="list-item-name">Eva Ferguson</h3>
-            <h4 class="list-item-title">Founder &amp; Lead Developer</h4>
-            <div class="list-item-biography">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam quisquam asperiores laborum quae doloremque voluptates explicabo libero deserunt qui. Atque!</p>
-            </div>
-            <text x={30} y={200} id="vizTitle">
+            </h1>
+            <svg></svg> 
+            <h3 class="list-item-name">Shanghai &amp; Beijing</h3>
+            <h4 class="list-item-title"> </h4>
+
+            <ul styles="text-align:left;">
+                <li> Which neighbourhoods offer the highest number of available airbnb listings?</li>
+                <li> How do listing price rates differ from neighborhood to neighbourhood?</li>
+                <li> How does the popularity of listings on Airbnb by neighbourhood change over the year?</li>
+                <li> What are the various categories of properties in China? What is their breakdown by neighbourhood?</li>
+                
+            </ul>
+            <text x={100} y={200} id="vizTitle">
               {"Choose a city to get started!"}
             </text>
-          </div>
-        </li>
-      </div>
+          <svg></svg> 
+        <svg></svg>
+        </div>
+       </div>
   </div>)
 } else if(selectedCity.label=='Shanghai'){
     return (
