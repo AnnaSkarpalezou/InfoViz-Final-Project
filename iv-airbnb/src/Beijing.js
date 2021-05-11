@@ -295,7 +295,7 @@ function Beijing(props) {
           mouseHoveringOn={mouseHoveringOn}
           mouseHoveringOff={mouseHoveringOff}
         />
-      </svg>
+        </svg>
         <svg
           width={uiPolyWidth}
           height={window.innerHeight}
