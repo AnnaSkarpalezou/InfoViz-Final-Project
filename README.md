@@ -42,7 +42,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#usage">Visualization and Interaction</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -113,9 +113,17 @@ The data set used in this project can be accessed and imported directly into eac
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Visualization and Interaction
 
-Each of the models in the models folder, can be used to predict futute stock prices. The dataset expected is a 2d dataframe, with dates as rows and different metrics for stocks in columns. The Portfolio Optimizer file, when fed predicted prices will output the weights for a portfolio of maximised returns over risk (sharpe ratio), sparcified through the l1 Lasso loss function.
+Our app is split into two main components, the cover page and the visualizations of the data. The cover page introduces the main objectives we hope to convey through our visualizations. Initially the page is solely the cover page, to navigate to the visualizations there is a dropdown UI widget that allows the user to choose among the cities for which visualisations are available, filtering the dataset used. For each city there are 3 main views, a choropleth map, a barchart and a time series.	
+The map's interaction is simple and intuitive, using the channel of saturation to differentiate the sections of airbnb listings. Users can hover over each of the respective city's neighbourhoods to see a toolbar with the name of the neighbourhood as well as a tooltip with aggregate statistics for that neighbourhood, which follows the cursor. The selected neighbourhood is distinguished by its changed color.
+Interactions with the bar graph allow the user to to select a neighbourhood, which changes color upon selection. Both the choropleth map and bar graph views are coordinated with linked highlighting bidirectionally, with a hover over a neighbourhood in the barchart triggering the same neighbourhood on the map and vice versa. A tooltip also appears, which does not follow the cursor as not to cover the information dense bar chart. 
+Lastly, an area map appears upon the selection of a neighbourhood either through the map or the barchart. This is unidirectionally linked to the other views. The three views with selection for each city are as follows:
+
+
+![alt text](https://github.com/AnnaSkarpalezou/InfoViz-Final-Project/blob/main/screenshots/shanghai.select.jpeg)
+
+![alt text](https://github.com/AnnaSkarpalezou/InfoViz-Final-Project/blob/main/screenshots/beijing.select.jpeg)
 
 <!-- LICENSE -->
 ## License
