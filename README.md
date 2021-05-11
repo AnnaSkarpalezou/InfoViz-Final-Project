@@ -138,8 +138,8 @@ Project Link: [https://github.com/AnnaSkarpalezou/Portfolio-Optimization-using-M
 |Name     |  Handle   | 
 |---------|-----------------|
 |[Anna Skarpalezou](https://github.com/AnnaSkarpalezou)| @annaskarpalezou       |
-|[Jorge Barreno](https://github.com/jab1255)| @jab1255        |
-|[Arjun Tisseverasinghe](https://github.com/arjuntisse) |     @arjuntisse    |
+|[Andrew Liu](https://github.com/NotLiu)| @NotLiu        |
+|[Brandon Eap]https://github.com/brandeap) |     @brandeap  |
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
