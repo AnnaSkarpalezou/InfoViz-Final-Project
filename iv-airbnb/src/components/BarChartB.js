@@ -21,7 +21,7 @@ function BarChartB(props) {
   
   const ticksx = xScale.domain();
   const ticksy = yScale.ticks(8);
-  console.log(data)
+  // console.log(data)
 
   if (selectedNeighbourhood === " ") {
     return (

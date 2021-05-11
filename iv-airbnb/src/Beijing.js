@@ -51,7 +51,6 @@ function Beijing(props) {
   const PriceData = useData(PricePath);
   const TooltipData = useData(TooltipPath);
   const monthData = useData(monthPath);
-  console.log(monthData)
   
   // console.log("FFFFF");
   // console.log(TooltipData);
