@@ -168,8 +168,8 @@ function Shanghai(props) {
 
   const mouseHoveringOn = (d) => {
     setSelectedNeighbourhood(d.neighbourhood);
-    setTooltipX(480);
-    setTooltipY(550);
+    setTooltipX(450);
+    setTooltipY(1240);
     console.log("mouse over on");
   };
   const mouseHoveringOff = () => {
