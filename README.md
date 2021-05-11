@@ -63,8 +63,16 @@ Welcome to the Airbnb Dataset Exploratory Analysis! We hope to understand the Ai
 * Which neighbourhoods offer the highest number of available airbnb listings?
 * How does Shanghai Compare to Beijing?
 
-The relevant project schematic follows
-![alt text](https://github.com/AnnaSkarpalezou/Portfolio-Optimization-using-Machine-Learning/blob/main/Pictures/Model%20Architecture-2.jpeg)
+Airbnb is a digital platform through which users can organize and deliver hospitality and tourism experiences. This hospitality service can be accessed via their website or smartphone applications. The aim of this visualisation project was to analyze and estimate the most common rental neighbourhoods in Shanghai, as well as how much it would on average cost for someone were considering a trip here. We are also exploring the popularity of each neighbourhood throughout the year, as well as offering some aggregate statistics by neighbourhood.
+The visualizations we created are intended to assist users in exploring common neighbourhoods based on their preferences if they wanted to book a trip and ride around or transit around Shanghai or Beijing. Our data and visualizations are mainly aimed at travelers looking for low-cost accommodations during the best time in the year. People looking for a cheap place to stay for a single night or a place to host a small gathering/event are among our secondary community.
+The cover page and visualization without selection look as follows:
+
+
+![alt text](https://github.com/AnnaSkarpalezou/InfoViz-Final-Project/blob/main/screenshots/cover.jpeg)
+
+![alt text](https://github.com/AnnaSkarpalezou/InfoViz-Final-Project/blob/main/screenshots/shanghai.jpeg)
+
+![alt text](https://github.com/AnnaSkarpalezou/InfoViz-Final-Project/blob/main/screenshots/beijing.jpeg)
 
 ### Built With
 
