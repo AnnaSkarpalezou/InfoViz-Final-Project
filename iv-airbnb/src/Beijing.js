@@ -45,7 +45,7 @@ function Beijing(props) {
   const mapPath = "./data/neighbourhoodsB.geojson";
   const PricePath = "./data/av_pricesB.csv";
   const TooltipPath = "./data/tooltip_statsB.csv";
-  const monthPath = "./data/neighbourhood_months.csv";
+  const monthPath = "./data/neighbourhood_monthsB.csv";
 
   const dataAll = useData(dataPath);
   const PriceData = useData(PricePath);
