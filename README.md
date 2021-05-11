@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://github.com/AnnaSkarpalezou/InfoViz-Final-Project/blob/main/screenshots/maps.jpeg" alt="Logo" width="300" height="100">
+    <img src="https://github.com/AnnaSkarpalezou/InfoViz-Final-Project/blob/main/screenshots/maps.jpeg" alt="Logo" width="300" height="180">
   </a>
 
   <h3 align="center">Data Visualization using React and D3</h3>
