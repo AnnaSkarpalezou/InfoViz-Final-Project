@@ -9,6 +9,5 @@ Welcome to the Airbnb Dataset Exploratory Analysis! We hope to understand the Ai
 * How does the popularity of listings on Airbnb by neighbourhood change over the year?
 * What are the various categories of properties in China? Can they differ depending on where you live?
 * Which neighbourhoods offer the highest number of available airbnb listings?
-* Which neighborhoods in New York get high marks from visitors?
 * How does Shanghai Compare to Beijing?
 
