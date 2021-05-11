@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/InfoViz-Final-Project/static/css/main.041cc46c.chunk.css",
+    "main.js": "/InfoViz-Final-Project/static/js/main.fd2bcda7.chunk.js",
+    "main.js.map": "/InfoViz-Final-Project/static/js/main.fd2bcda7.chunk.js.map",
+    "runtime-main.js": "/InfoViz-Final-Project/static/js/runtime-main.f2e2c29b.js",
+    "runtime-main.js.map": "/InfoViz-Final-Project/static/js/runtime-main.f2e2c29b.js.map",
+    "static/css/2.241d979d.chunk.css": "/InfoViz-Final-Project/static/css/2.241d979d.chunk.css",
+    "static/js/2.49cea088.chunk.js": "/InfoViz-Final-Project/static/js/2.49cea088.chunk.js",
+    "static/js/2.49cea088.chunk.js.map": "/InfoViz-Final-Project/static/js/2.49cea088.chunk.js.map",
+    "static/js/3.99662c7e.chunk.js": "/InfoViz-Final-Project/static/js/3.99662c7e.chunk.js",
+    "static/js/3.99662c7e.chunk.js.map": "/InfoViz-Final-Project/static/js/3.99662c7e.chunk.js.map",
+    "index.html": "/InfoViz-Final-Project/index.html",
+    "static/css/2.241d979d.chunk.css.map": "/InfoViz-Final-Project/static/css/2.241d979d.chunk.css.map",
+    "static/css/main.041cc46c.chunk.css.map": "/InfoViz-Final-Project/static/css/main.041cc46c.chunk.css.map",
+    "static/js/2.49cea088.chunk.js.LICENSE.txt": "/InfoViz-Final-Project/static/js/2.49cea088.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2e2c29b.js",
+    "static/css/2.241d979d.chunk.css",
+    "static/js/2.49cea088.chunk.js",
+    "static/css/main.041cc46c.chunk.css",
+    "static/js/main.fd2bcda7.chunk.js"
+  ]
+}

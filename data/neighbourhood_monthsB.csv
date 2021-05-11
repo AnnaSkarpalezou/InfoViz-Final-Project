@@ -1,0 +1,193 @@
+neighbourhood,date,total
+东城区,Jan,511
+东城区,Feb,275
+东城区,Mar,297
+东城区,Apr,267
+东城区,May,409
+东城区,Jun,356
+东城区,Jul,543
+东城区,Aug,453
+东城区,Sep,474
+东城区,Oct,646
+东城区,Nov,619
+东城区,Dec,690
+丰台区 / Fengtai,Jan,1353
+丰台区 / Fengtai,Feb,652
+丰台区 / Fengtai,Mar,586
+丰台区 / Fengtai,Apr,526
+丰台区 / Fengtai,May,655
+丰台区 / Fengtai,Jun,692
+丰台区 / Fengtai,Jul,962
+丰台区 / Fengtai,Aug,1308
+丰台区 / Fengtai,Sep,1138
+丰台区 / Fengtai,Oct,1453
+丰台区 / Fengtai,Nov,1455
+丰台区 / Fengtai,Dec,1517
+大兴区 / Daxing,Jan,365
+大兴区 / Daxing,Feb,136
+大兴区 / Daxing,Mar,164
+大兴区 / Daxing,Apr,162
+大兴区 / Daxing,May,200
+大兴区 / Daxing,Jun,186
+大兴区 / Daxing,Jul,244
+大兴区 / Daxing,Aug,437
+大兴区 / Daxing,Sep,385
+大兴区 / Daxing,Oct,500
+大兴区 / Daxing,Nov,413
+大兴区 / Daxing,Dec,455
+密云县 / Miyun,Jan,391
+密云县 / Miyun,Feb,344
+密云县 / Miyun,Mar,186
+密云县 / Miyun,Apr,352
+密云县 / Miyun,May,434
+密云县 / Miyun,Jun,597
+密云县 / Miyun,Jul,762
+密云县 / Miyun,Aug,1136
+密云县 / Miyun,Sep,820
+密云县 / Miyun,Oct,1201
+密云县 / Miyun,Nov,384
+密云县 / Miyun,Dec,353
+平谷区 / Pinggu,Jan,11
+平谷区 / Pinggu,Feb,20
+平谷区 / Pinggu,Mar,14
+平谷区 / Pinggu,Apr,36
+平谷区 / Pinggu,May,44
+平谷区 / Pinggu,Jun,44
+平谷区 / Pinggu,Jul,60
+平谷区 / Pinggu,Aug,83
+平谷区 / Pinggu,Sep,58
+平谷区 / Pinggu,Oct,72
+平谷区 / Pinggu,Nov,26
+平谷区 / Pinggu,Dec,26
+延庆县 / Yanqing,Jan,133
+延庆县 / Yanqing,Feb,200
+延庆县 / Yanqing,Mar,48
+延庆县 / Yanqing,Apr,99
+延庆县 / Yanqing,May,319
+延庆县 / Yanqing,Jun,387
+延庆县 / Yanqing,Jul,442
+延庆县 / Yanqing,Aug,699
+延庆县 / Yanqing,Sep,588
+延庆县 / Yanqing,Oct,739
+延庆县 / Yanqing,Nov,132
+延庆县 / Yanqing,Dec,133
+怀柔区 / Huairou,Jan,213
+怀柔区 / Huairou,Feb,230
+怀柔区 / Huairou,Mar,141
+怀柔区 / Huairou,Apr,269
+怀柔区 / Huairou,May,386
+怀柔区 / Huairou,Jun,431
+怀柔区 / Huairou,Jul,572
+怀柔区 / Huairou,Aug,671
+怀柔区 / Huairou,Sep,553
+怀柔区 / Huairou,Oct,768
+怀柔区 / Huairou,Nov,215
+怀柔区 / Huairou,Dec,264
+房山区,Jan,327
+房山区,Feb,104
+房山区,Mar,109
+房山区,Apr,130
+房山区,May,204
+房山区,Jun,305
+房山区,Jul,303
+房山区,Aug,502
+房山区,Sep,430
+房山区,Oct,595
+房山区,Nov,373
+房山区,Dec,436
+昌平区,Jan,517
+昌平区,Feb,234
+昌平区,Mar,228
+昌平区,Apr,214
+昌平区,May,258
+昌平区,Jun,342
+昌平区,Jul,417
+昌平区,Aug,608
+昌平区,Sep,588
+昌平区,Oct,749
+昌平区,Nov,565
+昌平区,Dec,678
+朝阳区 / Chaoyang,Jan,5639
+朝阳区 / Chaoyang,Feb,3301
+朝阳区 / Chaoyang,Mar,3401
+朝阳区 / Chaoyang,Apr,3277
+朝阳区 / Chaoyang,May,3732
+朝阳区 / Chaoyang,Jun,3916
+朝阳区 / Chaoyang,Jul,5014
+朝阳区 / Chaoyang,Aug,6839
+朝阳区 / Chaoyang,Sep,5958
+朝阳区 / Chaoyang,Oct,7370
+朝阳区 / Chaoyang,Nov,6213
+朝阳区 / Chaoyang,Dec,6839
+海淀区,Jan,1249
+海淀区,Feb,639
+海淀区,Mar,781
+海淀区,Apr,812
+海淀区,May,933
+海淀区,Jun,974
+海淀区,Jul,1142
+海淀区,Aug,1418
+海淀区,Sep,1448
+海淀区,Oct,1732
+海淀区,Nov,1671
+海淀区,Dec,1828
+石景山区,Jan,168
+石景山区,Feb,96
+石景山区,Mar,69
+石景山区,Apr,61
+石景山区,May,69
+石景山区,Jun,82
+石景山区,Jul,140
+石景山区,Aug,167
+石景山区,Sep,148
+石景山区,Oct,261
+石景山区,Nov,213
+石景山区,Dec,270
+西城区,Jan,242
+西城区,Feb,135
+西城区,Mar,162
+西城区,Apr,83
+西城区,May,96
+西城区,Jun,98
+西城区,Jul,147
+西城区,Aug,201
+西城区,Sep,242
+西城区,Oct,294
+西城区,Nov,274
+西城区,Dec,324
+通州区 / Tongzhou,Jan,455
+通州区 / Tongzhou,Feb,246
+通州区 / Tongzhou,Mar,168
+通州区 / Tongzhou,Apr,185
+通州区 / Tongzhou,May,208
+通州区 / Tongzhou,Jun,236
+通州区 / Tongzhou,Jul,346
+通州区 / Tongzhou,Aug,542
+通州区 / Tongzhou,Sep,453
+通州区 / Tongzhou,Oct,592
+通州区 / Tongzhou,Nov,488
+通州区 / Tongzhou,Dec,525
+门头沟区 / Mentougou,Jan,50
+门头沟区 / Mentougou,Feb,20
+门头沟区 / Mentougou,Mar,18
+门头沟区 / Mentougou,Apr,20
+门头沟区 / Mentougou,May,27
+门头沟区 / Mentougou,Jun,32
+门头沟区 / Mentougou,Jul,54
+门头沟区 / Mentougou,Aug,59
+门头沟区 / Mentougou,Sep,58
+门头沟区 / Mentougou,Oct,109
+门头沟区 / Mentougou,Nov,55
+门头沟区 / Mentougou,Dec,78
+顺义区 / Shunyi,Jan,507
+顺义区 / Shunyi,Feb,246
+顺义区 / Shunyi,Mar,279
+顺义区 / Shunyi,Apr,299
+顺义区 / Shunyi,May,351
+顺义区 / Shunyi,Jun,351
+顺义区 / Shunyi,Jul,504
+顺义区 / Shunyi,Aug,609
+顺义区 / Shunyi,Sep,533
+顺义区 / Shunyi,Oct,746
+顺义区 / Shunyi,Nov,535
+顺义区 / Shunyi,Dec,709
