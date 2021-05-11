@@ -25,10 +25,16 @@ function BarChartB(props) {
 
   if (selectedNeighbourhood === " ") {
     return (
-      <g transform={`translate(${x}, ${y})`}>
+      <g transform={`translate(${x}, ${y - 15})`}>
         <text
-          style={{ textAnchor: "start", fontSize: "20px" }}
-          transform={`translate(${width / 3 - 50}, -140)`}
+          style={{
+            textAnchor: "start",
+            fontSize: "20px",
+            fontWeight: "bold",
+            fontFamily: "Courier New, Courier, monospace",
+            color: "#57068c",
+          }}
+          transform={`translate(${width / 3 - 110}, -140)`}
         >
           {"Average Prices of Listings per neighbourhood"}
         </text>
@@ -56,7 +62,10 @@ function BarChartB(props) {
                 })`}
               >
                 <text
-                  style={{ textAnchor: "start", fontSize: "10px" }}
+                  style={{
+                    textAnchor: "start",
+                    fontSize: "10px",
+                  }}
                   x={-80}
                   y={height / 2 - 170}
                   transform={`rotate(50, 0, ${height / 2 - 83})`}
@@ -73,7 +82,16 @@ function BarChartB(props) {
                 transform={`translate(90, ${yScale(tickValue) - 100})`}
               >
                 <line x2={10} stroke={"black"} />
-                <text style={{ textAnchor: "end", fontSize: "18px" }}>
+                <text
+                  style={{
+                    textAnchor: "start",
+                    fontSize: "12px",
+                    fontWeight: "bold",
+                    fontFamily: "Courier New, Courier, monospace",
+                    color: "#57068c",
+                  }}
+                  transform={"translate(-30,0)"}
+                >
                   {tickValue}
                 </text>
               </g>
@@ -103,10 +121,16 @@ function BarChartB(props) {
     );
   } else {
     return (
-      <g transform={`translate(${x}, ${y})`}>
+      <g transform={`translate(${x}, ${y - 15})`}>
         <text
-          style={{ textAnchor: "start", fontSize: "20px" }}
-          transform={`translate(${width / 3 - 50}, -140)`}
+          style={{
+            textAnchor: "start",
+            fontSize: "20px",
+            fontWeight: "bold",
+            fontFamily: "Courier New, Courier, monospace",
+            color: "#57068c",
+          }}
+          transform={`translate(${width / 3 - 110}, -140)`}
         >
           {"Average Prices of Listings per neighbourhood"}
         </text>
@@ -151,7 +175,16 @@ function BarChartB(props) {
                 transform={`translate(90, ${yScale(tickValue) - 100})`}
               >
                 <line x2={10} stroke={"black"} />
-                <text style={{ textAnchor: "end", fontSize: "18px" }}>
+                <text
+                  style={{
+                    textAnchor: "start",
+                    fontSize: "12px",
+                    fontWeight: "bold",
+                    fontFamily: "Courier New, Courier, monospace",
+                    color: "#57068c",
+                  }}
+                  transform={"translate(-30,0)"}
+                >
                   {tickValue}
                 </text>
               </g>

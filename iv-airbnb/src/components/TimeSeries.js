@@ -31,20 +31,38 @@ function TimeSeries(props) {
     <g transform={`translate(${x + 105}, ${y + 50})`}>
       <path d={p1} fill={"#57068c"} />
       <text
-        transform={`translate(${180}, ${-55})rotate(0)`}
-        style={{ fontSize: "20px" }}
+        transform={`translate(${150}, ${-55})rotate(0)`}
+        style={{
+          textAnchor: "start",
+          fontSize: "20px",
+          fontWeight: "bold",
+          fontFamily: "Courier New, Courier, monospace",
+          color: "#57068c",
+        }}
       >
         {"Popularity of District"}
       </text>
       <text
         transform={`translate(${-55}, ${-30})rotate(0)`}
-        style={{ fontSize: "18px" }}
+        style={{
+          textAnchor: "start",
+          fontSize: "18px",
+          fontWeight: "bold",
+          fontFamily: "Courier New, Courier, monospace",
+          color: "#57068c",
+        }}
       >
         {"Total Reviews"}
       </text>
       <text
         transform={`translate(${width + 200}, ${height - 87})rotate(0)`}
-        style={{ fontSize: "18px" }}
+        style={{
+          textAnchor: "start",
+          fontSize: "18px",
+          fontWeight: "bold",
+          fontFamily: "Courier New, Courier, monospace",
+          color: "#57068c",
+        }}
       >
         {"Month"}
       </text>
@@ -64,7 +82,13 @@ function TimeSeries(props) {
             <line y2={10} stroke={"black"} />
             <text
               transform="translate(5,-25)"
-              style={{ textAnchor: "end", fontSize: "15px" }}
+              style={{
+                textAnchor: "end",
+                fontSize: "15px",
+                fontWeight: "bold",
+                fontFamily: "Courier New, Courier, monospace",
+                color: "#57068c",
+              }}
               y={50}
             >
               {tickValue}
@@ -77,7 +101,15 @@ function TimeSeries(props) {
         return (
           <g key={tickValue} transform={`translate(-5, ${yScale(tickValue)})`}>
             <line x2={5} stroke={"black"} />
-            <text style={{ textAnchor: "end", fontSize: "15px" }}>
+            <text
+              style={{
+                textAnchor: "end",
+                fontSize: "15px",
+                fontWeight: "bold",
+                fontFamily: "Courier New, Courier, monospace",
+                color: "#57068c",
+              }}
+            >
               {tickValue}
             </text>
           </g>
