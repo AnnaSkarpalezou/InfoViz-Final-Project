@@ -38,7 +38,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -75,26 +74,6 @@ The cover page and visualization without selection look as follows:
 ![alt text](https://github.com/AnnaSkarpalezou/InfoViz-Final-Project/blob/main/screenshots/beijing.jpeg)
 
 ### Built With
-
-This section should list all the main packages used in the project 
-* pandas
-* numpy
-* matplotlib.pyplot 
-* seaborn
-* sklearn
-* os
-* torch
-* keras
-* SciPy
-
-### Methods Used
-* Principal Component Analysis
-* Autoencoders
-* Muliple Linear Regression
-* Reccurrent Neural Networks (LSTM)
-* Optimisation
-
-### Technologies
 * Javascript
 * HTML
 * CSS
@@ -105,11 +84,13 @@ This section should list all the main packages used in the project
 <!-- GETTING STARTED -->
 ## Getting Started
 
-The data set used in this project can be accessed and imported directly into each model, from google drive. It is available to the entirety of the NYU network, however not publicly available as the information is of sensitive. The data preprocessing for each model is done in its respective jupyter notebook. The suggested order to view the jupyter notebooks begins with moving_average+linear_regression, then PCA+LSTM and lastly Optimization. 
-
-### Prerequisites
-
-- [PyTorch](https://pytorch.org/) (An open source deep learning platform) 
+The data can be accessed through the [Airbnb Open Data Sources](http://insideairbnb.com/get-the-data.html) page. We utilized 3 types of files for each of the cities, making for a total of 6 files used: 
+- Listings.csv contains basic information about the listings
+- Neighborhoods.geojson is a GeoJSON file of neighborhoods of the city, a map of Shanghai separated into districts in both English and Chinese. 
+- Reviews.csv contains the date when each listing was reviewed and the listing_id
+- 
+We utilised the price and neighbourhood information, grouping the listings together by neighbourhood to visualize the average price distribution across on a bar chart. We used the reviews_per_month as an estimate of popularity for each listing, which were later to be grouped together by neighbourhood and used in the area popularity chart. From Reviews.csv we will count the occurrences of a listing_id within a month (as gathered from the date), to gaze at the popularity and availability of a listing for each month. 
+	Since we wanted to get aggregate statistics by neighborhood to show on our tooltip, we decided to do some data preprocessing and munging in python. We mainly used the library pandas, using the function group_by to get by neighbourhood info. We then used the .mean(), .max(), .min() and .count() functions to get the average, maximum and minimum price of listings per neighbourhood, the number of each type of listings (Entire home/apartments, Private rooms, Shared rooms) per neighbourhood and the average number of reviews per neighbourhood per month. The relevant code can be found on data_munging.ipynb.
 
 
 <!-- USAGE EXAMPLES -->
