@@ -131,7 +131,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 
-Project Link: [https://github.com/AnnaSkarpalezou/Portfolio-Optimization-using-Machine-Learning](https://github.com/AnnaSkarpalezou/Portfolio-Optimization-using-Machine-Learning)
+Project Link: [https://github.com/AnnaSkarpalezou/InfoViz-Final-Project](https://github.com/AnnaSkarpalezou/InfoViz-Final-Project)
 
 ## Team Members
 
@@ -139,7 +139,7 @@ Project Link: [https://github.com/AnnaSkarpalezou/Portfolio-Optimization-using-M
 |---------|-----------------|
 |[Anna Skarpalezou](https://github.com/AnnaSkarpalezou)| @annaskarpalezou       |
 |[Andrew Liu](https://github.com/NotLiu)| @NotLiu        |
-|[Brandon Eap]https://github.com/brandeap) |     @brandeap  |
+|[Brandon Eap](https://github.com/brandeap) |     @brandeap  |
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
