@@ -85,6 +85,8 @@ The cover page and visualization without selection look as follows:
 <!-- GETTING STARTED -->
 ## Getting Started
 
+Because the project is a React project built using a nodeJS webserver, the project is mostly located in /iv-airbnb/src with separate components being in /iv-airbnb/src/components. To run the server run the following command in your terminal while in the /iv-airbnb directory: ```npm start```
+
 The data can be accessed through the [Airbnb Open Data Sources](http://insideairbnb.com/get-the-data.html) page. We utilized 3 types of files for each of the cities, making for a total of 6 files used: 
 - Listings.csv contains basic information about the listings
 - Neighborhoods.geojson is a GeoJSON file of neighborhoods of the city, a map of Shanghai separated into districts in both English and Chinese. 
