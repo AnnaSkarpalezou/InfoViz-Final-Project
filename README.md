@@ -23,6 +23,7 @@
   </p>
 </p>
 
+Here is a [video](https://youtu.be/Of_hkrsFrgo) showing us interacting with the visualization.
 
 
 <!-- TABLE OF CONTENTS -->
